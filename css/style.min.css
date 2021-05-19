@@ -1,0 +1,19 @@
+/* Error: Invalid Sass identifier ""
+ *   ,
+ * 1 | @use '../abstracts/'
+ *   | ^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   sass\components\_buttons.scss 1:1  @forward
+ *   sass\components\_index.scss 1:1    @use
+ *   sass\style.scss 3:1                root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Invalid Sass identifier \"\"\a   \2577 \a 1 \2502  @use '../abstracts/'\a   \2502  ^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   sass\\components\\_buttons.scss 1:1  @forward\a   sass\\components\\_index.scss 1:1    @use\a   sass\\style.scss 3:1                root stylesheet";
+}
