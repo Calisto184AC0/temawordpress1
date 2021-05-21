@@ -1,0 +1,101 @@
+@use '../abstracts'as *;
+
+.xlc-header {
+    width: 100%;
+    height: $xlc-header-height;
+    padding: 0 $xlc-lateral-space;
+    position: fixed;
+
+    // Crea el degradado
+    background-image: linear-gradient(
+        to bottom,
+        hsla(41.25, 34.78%, 9.02%, 0.67) 0%,
+        hsla(41.25, 34.78%, 9.02%, 0.661) 0.8%,
+        hsla(41.25, 34.78%, 9.02%, 0.637) 2.9%,
+        hsla(41.25, 34.78%, 9.02%, 0.6) 6.4%,
+        hsla(41.25, 34.78%, 9.02%, 0.552) 11%,
+        hsla(41.25, 34.78%, 9.02%, 0.496) 16.6%,
+        hsla(41.25, 34.78%, 9.02%, 0.434) 23.1%,
+        hsla(41.25, 34.78%, 9.02%, 0.368) 30.4%,
+        hsla(41.25, 34.78%, 9.02%, 0.302) 38.3%,
+        hsla(41.25, 34.78%, 9.02%, 0.236) 46.7%,
+        hsla(41.25, 34.78%, 9.02%, 0.174) 55.4%,
+        hsla(41.25, 34.78%, 9.02%, 0.118) 64.4%,
+        hsla(41.25, 34.78%, 9.02%, 0.07) 73.5%,
+        hsla(41.25, 34.78%, 9.02%, 0.033) 82.5%,
+        hsla(41.25, 34.78%, 9.02%, 0.009) 91.4%,
+        hsla(41.25, 34.78%, 9.02%, 0) 100%)
+    ;
+
+    .xlc-header-container {
+        position: relative;
+        z-index: 2;
+
+        padding: 1.625rem 0;
+
+        @extend %def-grid-12;
+        grid-template-areas:
+            "logo logo empty empty menu1 menu1 menu1 menu1 menu2 menu2 menu2 shop";
+        align-items: center;
+    }
+
+    .xlc-header-logo {
+        grid-area: logo;
+
+        a { display: inline-block; }
+    }
+
+    %def-header-menus {
+        display: flex;
+        font-size: 1.375rem;
+        font-weight: lighter;
+        width: 100%;
+        flex-wrap: wrap;
+
+        li {
+            margin-right: 1.875rem;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .xlc-header-menu1 {
+        grid-area: menu1;
+
+        @extend %def-header-menus;
+
+        a {
+            color: var(--xlc-white);
+        }
+    }
+
+    .xlc-header-menu2 {
+        grid-area: menu2;
+
+        @extend %def-header-menus;
+
+        a {
+            color: var(--xlc-orange);
+        }
+    }
+
+    .xlc-header-shop {
+        grid-area: shop;
+    }
+}
+
+// Para la transición de esconder y mostrar el header
+// TODO:        - Cambiar el nombre para que sigan el estandar
+.slideUp {
+    -webkit-transform: translateY(-160px);
+    transform: translate(0%, -160px);
+    transition: transform 0.5s ease-out;
+}
+
+.slideDown {
+    -webkit-transform: translateY(0);
+    transform: translate(0%, 0);
+    transition: transform 0.5s ease-out;
+}

@@ -1,0 +1,10 @@
+@use '../abstracts' as *;
+
+@each $f-weight, $f-style, $f-name in $xlc-font-names {
+    @font-face {
+        font-family: 'Aller';
+        src: url('../font/Aller_' + #{$f-name} + '.ttf') format('truetype');
+        font-weight: #{$f-weight};
+        font-style: #{$f-style};
+    }
+}

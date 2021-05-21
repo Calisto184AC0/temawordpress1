@@ -1,0 +1,9 @@
+@use '../abstracts' as *;
+
+:root {
+    @each $color, $value in $xlc-colors {
+        --xlc-#{"" + $color}: #{$value};
+    }
+
+    --xlc-lateral-space: #{$xlc-lateral-space};
+}
