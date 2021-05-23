@@ -1,1 +1,13 @@
 @use '../abstracts';
+
+.xlc-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.4375rem;
+
+    background-color: var(--xlc-orange);
+
+    color: var(--xlc-white);
+    font-size: 1.125rem;
+}

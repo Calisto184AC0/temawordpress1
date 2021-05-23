@@ -1,4 +1,4 @@
-.xlc-header .xlc-header-container {
+.xlc-content-col, .xlc-header .xlc-header-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 2rem;
@@ -52,6 +52,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: "Aller";
+  color: var(--xlc-black);
 }
 
 body,
@@ -101,8 +102,8 @@ select {
 
 /*#endregion Resetear estilos*/
 :root {
-  --xlc-white: #FFFFFFFF;
-  --xlc-black: #33333333;
+  --xlc-white: #FFFFFF;
+  --xlc-black: #333333;
   --xlc-gray: #969696;
   --xlc-beige: #DED2B6;
   --xlc-d-beige: #6F695B;
@@ -115,7 +116,6 @@ select {
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("../../img/index/shifaaz-shamoon-okVXy9tG3KY-unsplash.png");
 }
 
 .xlc-bg-multiply-blend {
@@ -127,19 +127,62 @@ select {
   background-color: var(--xlc-beige);
 }
 
+.xlc-bg-opacity {
+  position: relative;
+}
+.xlc-bg-opacity::before {
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -2;
+  background-color: var(--xlc-beige);
+  background-blend-mode: color;
+}
+.xlc-bg-opacity::after {
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  opacity: 0.32;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.xlc-bg-color {
+  opacity: 33%;
+}
+
 /* #endregion Fondos para las secciones */
+.xlc-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.4375rem;
+  background-color: var(--xlc-orange);
+  color: var(--xlc-white);
+  font-size: 1.125rem;
+}
+
 .xlc-header {
   width: 100%;
   height: 13.25rem;
   padding: 0 8.875rem;
   position: fixed;
+  z-index: 1;
   background-image: linear-gradient(to bottom, rgba(31, 26, 15, 0.67) 0%, rgba(31, 26, 15, 0.661) 0.8%, rgba(31, 26, 15, 0.637) 2.9%, rgba(31, 26, 15, 0.6) 6.4%, rgba(31, 26, 15, 0.552) 11%, rgba(31, 26, 15, 0.496) 16.6%, rgba(31, 26, 15, 0.434) 23.1%, rgba(31, 26, 15, 0.368) 30.4%, rgba(31, 26, 15, 0.302) 38.3%, rgba(31, 26, 15, 0.236) 46.7%, rgba(31, 26, 15, 0.174) 55.4%, rgba(31, 26, 15, 0.118) 64.4%, rgba(31, 26, 15, 0.07) 73.5%, rgba(31, 26, 15, 0.033) 82.5%, rgba(31, 26, 15, 0.009) 91.4%, rgba(31, 26, 15, 0) 100%);
 }
 .xlc-header .xlc-header-container {
   position: relative;
   z-index: 2;
   padding: 1.625rem 0;
-  grid-template-areas: "logo logo empty empty menu1 menu1 menu1 menu1 menu2 menu2 menu2 shop";
+  grid-template-areas: "logo logo . . menu1 menu1 menu1 menu1 menu2 menu2 menu2 shop";
   align-items: center;
 }
 .xlc-header .xlc-header-logo {
@@ -189,12 +232,106 @@ select {
   transition: transform 0.5s ease-out;
 }
 
-.xlc-section {
+body {
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: alwats;
+}
+body > * {
+  scroll-snap-align: start;
+}
+
+.xlc-section-vp {
   width: 100vw;
   height: 100vh;
   max-width: 100%;
   display: block;
-  padding: 0 var(--xlc-lateral-space);
+  padding: 4.375rem var(--xlc-lateral-space) 0;
+}
+
+.xlc-content-text {
+  font-size: 1.375rem;
+  line-height: 1.364;
+}
+
+.xlc-content-title {
+  font-size: 3.813rem;
+  line-height: 1.333;
+}
+
+.xlc-section-start {
+  background-image: url("../../img/index/shifaaz-shamoon-okVXy9tG3KY-unsplash.png");
+  padding-top: 13.25rem;
+  display: flex;
+  align-items: center;
+}
+.xlc-section-start .xlc-content-col {
+  grid-template-rows: auto auto;
+  grid-template-areas: "title  title   title   title   title   .       .   newsletter  newsletter  newsletter  newsletter  ." "text   text    text    text    text    text    .   newsletter  newsletter  newsletter  newsletter  .";
+}
+.xlc-section-start .xlc-content-col .xlc-content-text {
+  grid-area: text;
+  color: var(--xlc-white);
+}
+.xlc-section-start .xlc-content-col .xlc-content-title {
+  grid-area: title;
+  color: var(--xlc-white);
+}
+.xlc-section-start .xlc-content-col .xlc-content-newsletter {
+  grid-area: newsletter;
+}
+
+.xlc-section-presentation::after {
+  background-image: url("../../img/index/veronika-hradilova-aK9QuJb3xZg-unsplash.png");
+}
+.xlc-section-presentation .xlc-content-col {
+  grid-template-rows: auto auto auto;
+  grid-template-areas: "title title title title title title .     .     .     .     .     ." "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3" ".     .     .     .     .     .     .     .     btn   btn    btn  .";
+}
+.xlc-section-presentation .xlc-card-somos {
+  margin-bottom: 4.8125rem;
+}
+.xlc-section-presentation .xlc-card-somos span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.625rem;
+  background-color: var(--xlc-black);
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  color: var(--xlc-beige);
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+.xlc-section-presentation .xlc-card-somos h3 {
+  margin-bottom: 0.875rem;
+  font-size: 2.5rem;
+}
+.xlc-section-presentation .xlc-card-somos p {
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.333;
+}
+.xlc-section-presentation a {
+  grid-area: btn;
+}
+
+.xlc-section-colabora .xlc-content-col {
+  grid-template-rows: auto auto auto;
+  grid-template-areas: "content content content content photo1 photo1 photo1 photo1 photo2 photo2 photo2 photo2" "btn     btn     btn     .       photo1 photo1 photo1 photo1 photo2 photo2 photo2 photo2" ".       .       .       .       alt1   alt1   alt1   .      alt2   alt2   alt2   .";
+}
+.xlc-section-colabora .xlc-content-col div {
+  grid-area: content;
+  margin-bottom: 2.375rem;
+}
+.xlc-section-colabora .xlc-content-col div h2 {
+  font-size: 6.25rem;
+}
+.xlc-section-colabora .xlc-content-col div p {
+  line-height: 1.875;
+}
+.xlc-section-colabora .xlc-content-col .xlc-btn {
+  grid-area: btn;
 }
 
 /*# sourceMappingURL=style.css.map */

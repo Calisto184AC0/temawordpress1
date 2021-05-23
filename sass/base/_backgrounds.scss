@@ -4,7 +4,6 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('../../img/index/shifaaz-shamoon-okVXy9tG3KY-unsplash.png');
 }
 
 .xlc-bg-multiply-blend {
@@ -14,6 +13,43 @@
 
 .xlc-bg-w-color {
     background-color: var(--xlc-beige);
+}
+
+.xlc-bg-opacity {
+    position: relative;
+
+    &::before {
+        content: '';
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -2;
+        background-color: var(--xlc-beige);
+        background-blend-mode: color;
+    }
+
+    &::after {
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        content: "";
+        opacity: 0.32;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+    }
+}
+
+// ponerle un filtro a las imagenes con 33% opacidad y capa de beige con blend mode: color
+.xlc-bg-color {
+    opacity: 33%;
+    
 }
 
 

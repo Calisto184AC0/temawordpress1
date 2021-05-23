@@ -1,6 +1,6 @@
 $xlc-colors: (
-    white:      #FFFFFFFF,
-    black:      #33333333,
+    white:      #FFFFFF,
+    black:      #333333,
     gray:       #969696,
     beige:      #DED2B6,
     d-beige:    #6F695B,
@@ -10,6 +10,15 @@ $xlc-colors: (
 $xlc-lateral-space: 8.875rem; // 142px = 8.875 * 16px (que es el font-size del body)
 
 $xlc-header-height: 13.25rem; // 212px = 13.25 * 16px
+
+$xlc-padding-top-section: 4.375rem; // 70px = 4.375 * 16px
+
+// tamños de fuentes
+$xlc-xs-font: 1.125rem; // 18px
+$xlc-s-font: 1.375rem;  // 22px
+$xlc-m-font: 2.5rem;    // 40px
+$xlc-l-font: 3.813rem;  // 60px (en verdad son 61 con algo pero porque sino el h1 no se cuadra)
+$xlc-xl-font: 6.25rem;     // 100px
 
 $xlc-font-names: (  // weight, normal o italic, nombre del archivo
     (bold, normal, Bd),

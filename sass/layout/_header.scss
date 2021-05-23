@@ -5,6 +5,7 @@
     height: $xlc-header-height;
     padding: 0 $xlc-lateral-space;
     position: fixed;
+    z-index: 1;
 
     // Crea el degradado
     background-image: linear-gradient(
@@ -35,7 +36,7 @@
 
         @extend %def-grid-12;
         grid-template-areas:
-            "logo logo empty empty menu1 menu1 menu1 menu1 menu2 menu2 menu2 shop";
+            "logo logo . . menu1 menu1 menu1 menu1 menu2 menu2 menu2 shop";
         align-items: center;
     }
 
@@ -99,3 +100,12 @@
     transform: translate(0%, 0);
     transition: transform 0.5s ease-out;
 }
+
+body {
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: alwats;
+
+    &>* {
+        scroll-snap-align: start;
+    }
+}  
