@@ -1,13 +1,15 @@
-@use '../abstracts';
+// botones
 
-.xlc-btn {
+.xlc-orange-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1.4375rem;
 
-    background-color: var(--xlc-orange);
-
+    font-size: var(--xlc-xs-font-size);
+    font-weight: bold;
+    line-height: var(--xlc-paragraph-line-height);
     color: var(--xlc-white);
-    font-size: 1.125rem;
+
+    background-color: var(--xlc-orange);
 }

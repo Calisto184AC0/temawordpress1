@@ -1,13 +1,10 @@
-@use '../abstracts'as *;
-
 .xlc-header {
-    width: 100%;
-    height: $xlc-header-height;
-    padding: 0 $xlc-lateral-space;
     position: fixed;
-    z-index: 1;
-
-    // Crea el degradado
+    width: 100%;
+    height: var(--xlc-header-height);
+    padding-top: 0;
+    z-index: 4;
+    background-color: transparent;
     background-image: linear-gradient(
         to bottom,
         hsla(41.25, 34.78%, 9.02%, 0.67) 0%,
@@ -28,70 +25,47 @@
         hsla(41.25, 34.78%, 9.02%, 0) 100%)
     ;
 
-    .xlc-header-container {
+    .xlc-grid {
         position: relative;
-        z-index: 2;
-
-        padding: 1.625rem 0;
-
-        @extend %def-grid-12;
-        grid-template-areas:
-            "logo logo . . menu1 menu1 menu1 menu1 menu2 menu2 menu2 shop";
+        z-index: 3;
+        margin-top: 1.5rem;
         align-items: center;
-    }
+        grid-template-areas: 
+            "logo logo . . menu1 menu1 menu1 menu1 menu2 menu2 menu2 shop";
+        
+        .xlc-header-logo { grid-area: logo; }
 
-    .xlc-header-logo {
-        grid-area: logo;
+        .xlc-header-menu1, .xlc-header-menu2 {
+            display: flex;
 
-        a { display: inline-block; }
-    }
+            li {
+                margin-right: 1rem;
+                font-size: var(--xlc-s-font-size);
 
-    %def-header-menus {
-        display: flex;
-        font-size: 1.375rem;
-        font-weight: lighter;
-        width: 100%;
-        flex-wrap: wrap;
-
-        li {
-            margin-right: 1.875rem;
-
-            &:last-of-type {
-                margin-right: 0;
+                &:last-of-type {
+                    margin: 0;
+                }
             }
         }
-    }
+        .xlc-header-menu1 {
+            grid-area: menu1;
 
-    .xlc-header-menu1 {
-        grid-area: menu1;
-
-        @extend %def-header-menus;
-
-        a {
-            color: var(--xlc-white);
+            li a { color: var(--xlc-white); }
         }
-    }
+        .xlc-header-menu2 {
+            grid-area: menu2;
 
-    .xlc-header-menu2 {
-        grid-area: menu2;
-
-        @extend %def-header-menus;
-
-        a {
-            color: var(--xlc-orange);
+            li a { color: var(--xlc-orange); }
         }
-    }
 
-    .xlc-header-shop {
-        grid-area: shop;
+        .xlc-header-shop { grid-area: shop; }
     }
 }
 
 // Para la transición de esconder y mostrar el header
-// TODO:        - Cambiar el nombre para que sigan el estandar
 .slideUp {
-    -webkit-transform: translateY(-160px);
-    transform: translate(0%, -160px);
+    -webkit-transform: translateY(calc(0px - var(--xlc-header-height)));
+    transform: translate(0%, calc(0px - var(--xlc-header-height)));
     transition: transform 0.5s ease-out;
 }
 
@@ -100,12 +74,3 @@
     transform: translate(0%, 0);
     transition: transform 0.5s ease-out;
 }
-
-body {
-    scroll-snap-type: y mandatory;
-    scroll-snap-stop: alwats;
-
-    &>* {
-        scroll-snap-align: start;
-    }
-}  

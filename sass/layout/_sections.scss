@@ -1,0 +1,81 @@
+// hay dos tipos de secciones las que ocupan todo el viewport y las normales
+.xlc-section-vp {
+    width: 100vw;
+    height: 100vh;
+    max-width:100%;
+}
+
+.xlc-init-section {
+    padding-top: var(--xlc-header-height);
+    display: flex;
+    align-items: center;
+
+    .xlc-grid {
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "title title title title title . . newsletter newsletter newsletter newsletter ."
+            "subtitle subtitle subtitle subtitle subtitle subtitle . newsletter newsletter newsletter newsletter .";
+
+        .xlc-title { grid-area: title; color: var(--xlc-white); }
+        .xlc-subtitle { grid-area: subtitle; color: var(--xlc-white); }
+        div { grid-area: newsletter; }
+    }
+}
+
+.xlc-nosotros-section .xlc-grid {
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "title title title title title title . . . . . ."
+        "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3"
+        ". . . . . . . . btn btn btn .";
+
+    .xlc-title { 
+        grid-area: title; 
+        margin-bottom: 16rem;
+    }
+    .xlc-enum-card:nth-of-type(1) { grid-area: card1; }
+    .xlc-enum-card:nth-of-type(2) { grid-area: card2; }
+    .xlc-enum-card:nth-of-type(3) { grid-area: card3; }
+    .xlc-orange-btn {
+        grid-area: btn;
+        justify-self: stretch;
+    }
+}
+
+.xlc-colabora-section .xlc-grid {
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas: 
+        "title title title title img1 img1 img1 img1 img2 img2 img2 img2"
+        "description description description description img1 img1 img1 img1 img2 img2 img2 img2"
+        "btn btn btn . img1 img1 img1 img1 img2 img2 img2 img2";
+
+    .xlc-title { 
+        grid-area: title;
+        font-size: var(--xlc-xl-font-size);
+        line-height: 133px;
+    }
+    .xlc-subtitle {
+        grid-area: description;
+        margin-bottom: 2.375rem;
+    }
+    .xlc-orange-btn { grid-area: btn; }
+    .xlc-img-card:nth-of-type(1) { grid-area: img1; }
+    .xlc-img-card:nth-of-type(2) { grid-area: img2; }
+}
+
+.xlc-proyectos-section {
+    .xlc-grid {
+        margin-bottom: 5.5rem;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "title title title title title title"
+            "description description description description description description";
+
+        .xlc-title { grid-area: title; }
+        .xlc-subtitle { grid-area: description; }
+    }
+
+    .xlc-projects-list {
+        margin: 0 calc(0px - var(--xlc-grid-lateral-space));
+    }
+}

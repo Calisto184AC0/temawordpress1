@@ -1,9 +1,28 @@
-@use '../abstracts' as *;
+// todas las variables que se encuentran en la carpeta abstract
+
+@use '../abstract' as *;
 
 :root {
+    // Los colores
     @each $color, $value in $xlc-colors {
         --xlc-#{"" + $color}: #{$value};
     }
 
-    --xlc-lateral-space: #{$xlc-lateral-space};
+    // Los tamaños de fuente
+    @each $size, $value in $xlc-font-sizes {
+        --xlc-#{$size}-font-size: #{$value};
+    }
+
+    // Alturas de la linea
+    @each $name, $value in $xlc-line-heights {
+        --xlc-#{$name}-line-height: #{$value};
+    }
+
+    // Más variables
+    --xlc-grid-gap: #{$xlc-grid-gap};
+    --xlc-grid-lateral-space: #{$xlc-grid-lateral-space};
+    
+    --xlc-section-top-padding: #{$xlc-section-top-padding};
+
+    --xlc-header-height: #{$xlc-header-height};
 }

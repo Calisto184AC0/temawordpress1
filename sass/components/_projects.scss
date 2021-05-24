@@ -1,0 +1,12 @@
+// los proyectos
+
+.xlc-projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    
+    .xlc-project {
+        flex-grow: 1;
+        width: 33.33%;
+        height: 28.125rem;
+    }
+}

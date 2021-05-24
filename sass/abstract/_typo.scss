@@ -1,0 +1,25 @@
+// fuentes, estilos de fuente, tamaños de fuente y más ajustes de la tipografía
+
+$xlc-fonts: ( // (weight, normal o italic, ubicación del archivo desde root del tema)
+    (bold,    normal,   'font/Aller_Bd.ttf'),
+    (bold,    italic,   'font/Aller_BdIt.ttf'),
+    (normal,  italic,   'font/Aller_It.ttf'),
+    (100,     normal,   'font/Aller_Lt.ttf'),
+    (100,     italic,   'font/Aller_LtIt.ttf'),
+    (normal,  normal,   'font/Aller_Rg.ttf')
+);
+
+$xlc-font-sizes: (  // Los tamaños están basados que el tamaño de fuente de la web es de 16px
+    xs: 1.125rem,   // 18px
+    s:  1.375rem,   // 22px
+    m:  2.5rem,     // 40px
+    l:  3.813rem,   // 60px (en verdad son 61 pero por un ajuste se pusó así)
+    xl: 6.25rem     // 100px
+);
+
+$xlc-line-heights: (
+    headings:           80px,
+    subtitles:          30px,
+    paragraph:          24px,
+    card-description:   28px
+);
