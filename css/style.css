@@ -17,6 +17,8 @@
   --xlc-grid-lateral-space: 8.875rem;
   --xlc-section-top-padding: 4.375rem;
   --xlc-header-height: 13.25rem;
+  --xlc-project-padding: 3.4rem;
+  --xlc-transition-projects-interval: 0.2s ease-in;
 }
 
 @font-face {
@@ -178,9 +180,136 @@ input, button, textarea, select {
   flex-wrap: wrap;
 }
 .xlc-projects-list .xlc-project {
-  flex-grow: 1;
   width: 33.33%;
   height: 28.125rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--xlc-project-padding);
+  cursor: pointer;
+}
+.xlc-projects-list .xlc-project .xlc-project-title {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 0.3rem;
+  font-size: 1.875rem;
+  color: var(--xlc-white);
+  line-height: var(--xlc-paragraph-line-height);
+  transition: all 0.2s ease-in;
+}
+.xlc-projects-list .xlc-project .xlc-project-description {
+  position: relative;
+  z-index: 2;
+  max-height: 0;
+  font-size: var(--xlc-xs-font-size);
+  color: var(--xlc-white);
+  line-height: var(--xlc-paragraph-line-height);
+  overflow: hidden;
+  transition: all var(--xlc-transition-projects-interval);
+}
+.xlc-projects-list .xlc-project .xlc-project-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+.xlc-projects-list .xlc-project .xlc-project-img::before {
+  content: "";
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+  background-image: linear-gradient(to top, rgba(117, 117, 117, 0.88) 0%, rgba(117, 117, 117, 0.869) 8.6%, rgba(117, 117, 117, 0.837) 17.5%, rgba(117, 117, 117, 0.788) 26.5%, rgba(117, 117, 117, 0.726) 35.6%, rgba(117, 117, 117, 0.652) 44.6%, rgba(117, 117, 117, 0.57) 53.3%, rgba(117, 117, 117, 0.484) 61.7%, rgba(117, 117, 117, 0.396) 69.6%, rgba(117, 117, 117, 0.31) 76.9%, rgba(117, 117, 117, 0.228) 83.4%, rgba(117, 117, 117, 0.154) 89%, rgba(117, 117, 117, 0.092) 93.6%, rgba(117, 117, 117, 0.043) 97.1%, rgba(117, 117, 117, 0.011) 99.2%, rgba(117, 117, 117, 0) 100%);
+  mix-blend-mode: multiply;
+}
+.xlc-projects-list .xlc-project .xlc-project-img::after {
+  content: "";
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  background-color: var(--xlc-beige);
+  mix-blend-mode: color;
+  transition: all, var(--xlc-transition-projects-interval);
+}
+.xlc-projects-list .xlc-project .xlc-project-img img {
+  position: relative;
+  z-index: 2;
+  opacity: 0.32;
+  height: 100%;
+  transition: all, var(--xlc-transition-projects-interval);
+}
+.xlc-projects-list .xlc-project:hover .xlc-project-title {
+  color: var(--xlc-orange);
+}
+.xlc-projects-list .xlc-project:hover .xlc-project-description {
+  max-height: 100%;
+}
+.xlc-projects-list .xlc-project:hover .xlc-project-img::after {
+  background-color: transparent;
+}
+.xlc-projects-list .xlc-project:hover .xlc-project-img img {
+  opacity: 1;
+}
+.xlc-projects-list .xlc-all-project {
+  width: 33.33%;
+  height: 28.125rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--xlc-project-padding);
+  cursor: pointer;
+}
+.xlc-projects-list .xlc-all-project .xlc-project-title {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0.5rem;
+  font-size: 1.875rem;
+  color: var(--xlc-orange);
+  line-height: var(--xlc-paragraph-line-height);
+  transition: all 0.2s ease-in;
+}
+.xlc-projects-list .xlc-all-project .xlc-project-description {
+  position: relative;
+  z-index: 2;
+  font-size: var(--xlc-xs-font-size);
+  color: var(--xlc-white);
+  line-height: var(--xlc-paragraph-line-height);
+  overflow: hidden;
+  transition: all var(--xlc-transition-projects-interval);
+}
+.xlc-projects-list .xlc-all-project .xlc-project-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+.xlc-projects-list .xlc-all-project .xlc-project-img::before {
+  content: "";
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+  background-image: linear-gradient(to top, rgba(117, 117, 117, 0.88) 0%, rgba(117, 117, 117, 0.869) 8.6%, rgba(117, 117, 117, 0.837) 17.5%, rgba(117, 117, 117, 0.788) 26.5%, rgba(117, 117, 117, 0.726) 35.6%, rgba(117, 117, 117, 0.652) 44.6%, rgba(117, 117, 117, 0.57) 53.3%, rgba(117, 117, 117, 0.484) 61.7%, rgba(117, 117, 117, 0.396) 69.6%, rgba(117, 117, 117, 0.31) 76.9%, rgba(117, 117, 117, 0.228) 83.4%, rgba(117, 117, 117, 0.154) 89%, rgba(117, 117, 117, 0.092) 93.6%, rgba(117, 117, 117, 0.043) 97.1%, rgba(117, 117, 117, 0.011) 99.2%, rgba(117, 117, 117, 0) 100%);
+  mix-blend-mode: multiply;
+}
+.xlc-projects-list .xlc-all-project .xlc-project-img img {
+  position: relative;
+  z-index: 2;
+  opacity: 1;
+  height: 100%;
 }
 
 .xlc-container {
@@ -228,7 +357,7 @@ input, button, textarea, select {
 }
 .xlc-nosotros-section .xlc-grid .xlc-title {
   grid-area: title;
-  margin-bottom: 16rem;
+  margin-bottom: 13rem;
 }
 .xlc-nosotros-section .xlc-grid .xlc-enum-card:nth-of-type(1) {
   grid-area: card1;
