@@ -1,0 +1,55 @@
+.xlc-footer {
+    .xlc-footer-section {
+        height: 38rem;
+
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "title title title title title title . . . . . ."
+            "description description description description description description . . . . . ."
+            "btn btn btn . . . . . . . . .";
+
+        .xlc-title {
+            grid-area: title;
+            color: var(--xlc-white);
+        }
+        .xlc-subtitle {
+            grid-area: description;
+            color: var(--xlc-white);
+            margin-bottom: 8rem;
+        }
+        .xlc-orange-btn { grid-area: btn; }
+    }
+
+    .xlc-footer-info {
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "links links legal legal legal . newsletter newsletter newsletter newsletter newsletter newsletter"
+            "logo logo ubi ubi ubi . rrss rrss copy copy copy copy";
+        
+        .xlc-links {
+            grid-area: links;
+        }
+        .xlc-legal-info {
+            grid-area: legal;
+        }
+        .xlc-newsletter {
+            grid-area: newsletter;
+        }
+        .xlc-footer-logo {
+            grid-area: logo;
+            align-self: flex-end;
+        }
+        .xlc-ubi-info {
+            grid-area: ubi;
+            align-self: flex-end;
+        }
+        .xlc-rrss {
+            grid-area: rrss;
+            align-self: flex-end;
+        }
+        .xlc-copyright {
+            grid-area: copy;
+            align-self: flex-end;
+        }
+    }
+}

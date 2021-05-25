@@ -1,5 +1,4 @@
-// los proyectos
-
+// proyectos
 .xlc-projects-list {
     display: flex;
     flex-wrap: wrap;
@@ -86,7 +85,6 @@
                 z-index: 1;
     
                 background-color: var(--xlc-beige);
-                mix-blend-mode: color;
 
                 transition: all, var(--xlc-transition-projects-interval);
             }
@@ -96,6 +94,8 @@
                 z-index: 2;
                 opacity: .32;
                 height: 100%;
+
+                mix-blend-mode: luminosity;
 
                 transition: all, var(--xlc-transition-projects-interval);
             }
@@ -199,5 +199,21 @@
                 height: 100%;
             }
         }
+    }
+}
+
+// marcas
+.xlc-marcas-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    .xlc-marca {
+        width: 25%;
+        height: 28.125rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: 1px solid var(--xlc-gray);
+        border-top: 1px solid var(--xlc-gray);
     }
 }

@@ -1,14 +1,14 @@
 // la web usa un grid de 12 columnas, 142px de margen y 32px de espacio entre columnas
 
 .xlc-container {
-    padding: var(--xlc-section-top-padding) var(--xlc-grid-lateral-space) 0;
+    padding: 0 var(--xlc-grid-lateral-space) 0;
     background-color: var(--xlc-beige);
 
     & > .xlc-grid {
+        padding-top: var(--xlc-section-top-padding);
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         column-gap: var(--xlc-grid-gap);
         align-items: start;
-        justify-items: start;
     }
 }
