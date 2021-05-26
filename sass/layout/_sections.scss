@@ -1,8 +1,4 @@
 // hay dos tipos de secciones las que ocupan todo el viewport y las normales
-html {
-	scroll-snap-type: y proximity;
-    scroll-snap-stop: always;
-}
 
 .xlc-section-vp {
     width: 100vw;
@@ -10,6 +6,31 @@ html {
     max-width:100%;
 }
 
+.xlc-multiply-background, .xlc-color-background {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+.xlc-multiply-background::after { background-color: var(--xlc-beige); background-blend-mode: multiply; }
+.xlc-color-background {
+    background-color: var(--xlc-beige);
+
+    &::after { mix-blend-mode: luminosity; opacity: .32; }
+} 
+
+/* #region Index */
 .xlc-init-section {
     padding-top: var(--xlc-header-height);
     display: flex;
@@ -25,26 +46,32 @@ html {
         .xlc-subtitle { grid-area: subtitle; color: var(--xlc-white); }
         div { grid-area: newsletter; }
     }
+
+    &::after { background-image: url('../../img/index/index-init.png'); }
 }
 
-.xlc-nosotros-section .xlc-grid {
-    grid-template-rows: auto auto;
-    grid-template-areas: 
-        "title title title title title title . . . . . ."
-        "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3"
-        ". . . . . . . . btn btn btn .";
+.xlc-nosotros-section {
+    .xlc-grid {
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "title title title title title title . . . . . ."
+            "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3"
+            ". . . . . . . . btn btn btn .";
 
-    .xlc-title { 
-        grid-area: title; 
-        margin-bottom: 13rem;
+        .xlc-title { 
+            grid-area: title; 
+            margin-bottom: 6rem;
+        }
+        .xlc-enum-card:nth-of-type(1) { grid-area: card1; }
+        .xlc-enum-card:nth-of-type(2) { grid-area: card2; }
+        .xlc-enum-card:nth-of-type(3) { grid-area: card3; }
+        .xlc-orange-btn {
+            grid-area: btn;
+            justify-self: stretch;
+        }
     }
-    .xlc-enum-card:nth-of-type(1) { grid-area: card1; }
-    .xlc-enum-card:nth-of-type(2) { grid-area: card2; }
-    .xlc-enum-card:nth-of-type(3) { grid-area: card3; }
-    .xlc-orange-btn {
-        grid-area: btn;
-        justify-self: stretch;
-    }
+
+    &::after { background-image: url('../../img/index/index-background1.png'); }
 }
 
 .xlc-colabora-section {
@@ -73,6 +100,8 @@ html {
 }
 
 .xlc-proyectos-section {
+    background-color: var(--xlc-beige);
+
     .xlc-grid {
         margin-bottom: 5.5rem;
         grid-template-rows: auto auto;
@@ -90,6 +119,8 @@ html {
 }
 
 .xlc-marcas-section {
+    background-color: var(--xlc-beige);
+
     .xlc-grid {
         margin-bottom: 5.5rem;
         grid-template-areas: 
@@ -102,3 +133,10 @@ html {
         margin: 0 calc(0px - var(--xlc-grid-lateral-space));
     }
 }
+/* #endregion Index */
+
+/* #region Nosotros */
+
+
+
+/* #endregion Nostros */

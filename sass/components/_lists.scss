@@ -206,6 +206,7 @@
 .xlc-marcas-list {
     display: flex;
     flex-wrap: wrap;
+    border-top: 1px solid var(--xlc-gray);
 
     .xlc-marca {
         width: 25%;
@@ -213,7 +214,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-left: 1px solid var(--xlc-gray);
-        border-top: 1px solid var(--xlc-gray);
+        border-right: 1px solid var(--xlc-gray);
+        border-bottom: 1px solid var(--xlc-gray);
+
+        &:nth-child(4n) {
+            border-right: none;
+        }
     }
 }

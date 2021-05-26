@@ -1,5 +1,8 @@
 .xlc-footer {
-    .xlc-footer-section {
+    background-color: var(--xlc-beige);
+    
+    .xlc-footer-dona, .xlc-footer-colabora {
+        position: relative;
         height: 38rem;
 
         grid-template-rows: auto auto auto;
@@ -9,28 +12,109 @@
             "btn btn btn . . . . . . . . .";
 
         .xlc-title {
+            position: relative;
+            z-index: 1;
             grid-area: title;
             color: var(--xlc-white);
         }
         .xlc-subtitle {
+            position: relative;
+            z-index: 1;
             grid-area: description;
             color: var(--xlc-white);
             margin-bottom: 8rem;
         }
-        .xlc-orange-btn { grid-area: btn; }
+        .xlc-orange-btn {
+            position: relative;
+            z-index: 1;
+            grid-area: btn;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            right: calc(0px - var(--xlc-grid-lateral-space));
+            left: calc(0px - var(--xlc-grid-lateral-space));
+            top: 0;
+            bottom: 0;
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            mix-blend-mode: multiply;
+        }
+    }
+
+    .xlc-footer-dona::after {
+        background-image: linear-gradient(
+            to bottom,
+              hsla(41.82, 15.07%, 57.06%, 0.61) 0%,
+              hsla(41.83, 15.15%, 57.48%, 0.604) 8.6%,
+              hsla(41.86, 15.41%, 58.66%, 0.586) 17.5%,
+              hsla(41.9, 15.84%, 60.42%, 0.559) 26.5%,
+              hsla(41.97, 16.46%, 62.63%, 0.524) 35.6%,
+              hsla(42.06, 17.3%, 65.12%, 0.483) 44.6%,
+              hsla(42.15, 18.38%, 67.76%, 0.438) 53.3%,
+              hsla(42.26, 19.71%, 70.45%, 0.389) 61.7%,
+              hsla(42.37, 21.33%, 73.08%, 0.341) 69.6%,
+              hsla(42.48, 23.22%, 75.58%, 0.292) 76.9%,
+              hsla(42.58, 25.35%, 77.86%, 0.247) 83.4%,
+              hsla(42.67, 27.66%, 79.87%, 0.206) 89%,
+              hsla(42.75, 29.98%, 81.55%, 0.171) 93.6%,
+              hsla(42.81, 32.07%, 82.82%, 0.144) 97.1%,
+              hsla(42.84, 33.58%, 83.63%, 0.126) 99.2%,
+              hsla(42.86, 34.15%, 83.92%, 0.12) 100%
+        ), url('../../img/footer/footer-dona.png');
+    }
+    .xlc-footer-colabora::after {
+        background-image: linear-gradient(
+            to bottom,
+              hsla(41.82, 15.07%, 57.06%, 0.61) 0%,
+              hsla(41.83, 15.15%, 57.48%, 0.604) 8.6%,
+              hsla(41.86, 15.41%, 58.66%, 0.586) 17.5%,
+              hsla(41.9, 15.84%, 60.42%, 0.559) 26.5%,
+              hsla(41.97, 16.46%, 62.63%, 0.524) 35.6%,
+              hsla(42.06, 17.3%, 65.12%, 0.483) 44.6%,
+              hsla(42.15, 18.38%, 67.76%, 0.438) 53.3%,
+              hsla(42.26, 19.71%, 70.45%, 0.389) 61.7%,
+              hsla(42.37, 21.33%, 73.08%, 0.341) 69.6%,
+              hsla(42.48, 23.22%, 75.58%, 0.292) 76.9%,
+              hsla(42.58, 25.35%, 77.86%, 0.247) 83.4%,
+              hsla(42.67, 27.66%, 79.87%, 0.206) 89%,
+              hsla(42.75, 29.98%, 81.55%, 0.171) 93.6%,
+              hsla(42.81, 32.07%, 82.82%, 0.144) 97.1%,
+              hsla(42.84, 33.58%, 83.63%, 0.126) 99.2%,
+              hsla(42.86, 34.15%, 83.92%, 0.12) 100%
+        ), url('../../img/footer/footer-colabora.png');
     }
 
     .xlc-footer-info {
         grid-template-rows: auto auto;
         grid-template-areas:
             "links links legal legal legal . newsletter newsletter newsletter newsletter newsletter newsletter"
-            "logo logo ubi ubi ubi . rrss rrss copy copy copy copy";
+            "logo logo ubi ubi ubi ubi rrss rrss copy copy copy copy";
+        row-gap: 8.75rem;
+
+        font-size: var(--xlc-s-font-size);
         
         .xlc-links {
             grid-area: links;
+
+            li a {
+                color: var(--xlc-black);
+            }
+
+            li.xlc-footer-menu2 a {
+                color: var(--xlc-orange);
+            }
         }
         .xlc-legal-info {
             grid-area: legal;
+
+            li a {
+                color: var(--xlc-black)
+            }  
         }
         .xlc-newsletter {
             grid-area: newsletter;
@@ -38,6 +122,7 @@
         .xlc-footer-logo {
             grid-area: logo;
             align-self: flex-end;
+            mix-blend-mode: exclusion;
         }
         .xlc-ubi-info {
             grid-area: ubi;
@@ -46,10 +131,19 @@
         .xlc-rrss {
             grid-area: rrss;
             align-self: flex-end;
+            justify-self: stretch;
+            display: flex;
+            align-items: center;
+
+            a { margin-right: 1.5rem; }
+            a:last-of-type { margin-right: 0; }
         }
         .xlc-copyright {
             grid-area: copy;
             align-self: flex-end;
+            justify-self: end;
+            font-size: var(--xlc-xs-font-size);
+            font-weight: lighter;
         }
     }
 }

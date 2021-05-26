@@ -2,13 +2,15 @@
 
 .xlc-container {
     padding: 0 var(--xlc-grid-lateral-space) 0;
-    background-color: var(--xlc-beige);
 
     & > .xlc-grid {
+        position: relative;
+        z-index: 1;
         padding-top: var(--xlc-section-top-padding);
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         column-gap: var(--xlc-grid-gap);
         align-items: start;
+        align-content: start;
     }
 }
