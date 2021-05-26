@@ -94,7 +94,8 @@
         grid-template-areas:
             "links links legal legal legal . newsletter newsletter newsletter newsletter newsletter newsletter"
             "logo logo ubi ubi ubi ubi rrss rrss copy copy copy copy";
-        row-gap: 8.75rem;
+        row-gap: 8rem;
+        padding-bottom: 5rem;
 
         font-size: var(--xlc-s-font-size);
         
