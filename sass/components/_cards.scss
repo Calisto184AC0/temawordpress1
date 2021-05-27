@@ -26,14 +26,13 @@
         margin-bottom: 3.75rem;
 
         font-size: var(--xlc-xs-font-size);
-        font-weight: lighter;
         line-height: var(--xlc-paragraph-line-height);
     }
 }
 
 .xlc-img-card {
 
-    .xlc-img {
+    .xlc-img, .xlc-member-img {
         position: relative;
 
         &::before {
@@ -46,15 +45,44 @@
 
             background-color: var(--xlc-beige);
             mix-blend-mode: color;
+
+            transition: all .2s ease-in-out;
         }
         
         img {
             opacity: .33;
+            transition: all .2s ease-in-out;
         }
     }
 
     .xlc-caption {
         font-size: var(--xlc-xs-font-size);
+    }
+
+    .xlc-member-img {
+        &:hover {
+            &::before {
+                background-color: transparent;
+            }
+    
+            img {
+                opacity: 1;
+            }
+        }
+    }
+
+    .xlc-member-name, .xlc-member-occupation, .xlc-member-description {
+        font-size: var(--xlc-xs-font-size);
+        line-height: var(--xlc-paragraph-line-height);
+    }
+
+    .xlc-member-name {
+        padding-top: 1rem;
+        font-weight: bold;
+    }
+
+    .xlc-member-description {
+        width: calc(2/3 * 100%);
     }
 }
 
