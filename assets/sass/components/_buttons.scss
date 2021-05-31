@@ -1,0 +1,15 @@
+// botones
+
+.xlc-orange-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.4375rem;
+
+    font-size: var(--xlc-xs-font-size);
+    font-weight: bold;
+    line-height: var(--xlc-paragraph-line-height);
+    color: var(--xlc-white);
+
+    background-color: var(--xlc-orange);
+}

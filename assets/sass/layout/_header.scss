@@ -1,0 +1,87 @@
+.xlc-header {
+    position: fixed;
+    width: 100%;
+    height: var(--xlc-header-height);
+    z-index: 4;
+    background-color: transparent;
+    background-image: linear-gradient(
+        to bottom,
+        hsla(41.25, 34.78%, 9.02%, 0.67) 0%,
+        hsla(41.25, 34.78%, 9.02%, 0.661) 0.8%,
+        hsla(41.25, 34.78%, 9.02%, 0.637) 2.9%,
+        hsla(41.25, 34.78%, 9.02%, 0.6) 6.4%,
+        hsla(41.25, 34.78%, 9.02%, 0.552) 11%,
+        hsla(41.25, 34.78%, 9.02%, 0.496) 16.6%,
+        hsla(41.25, 34.78%, 9.02%, 0.434) 23.1%,
+        hsla(41.25, 34.78%, 9.02%, 0.368) 30.4%,
+        hsla(41.25, 34.78%, 9.02%, 0.302) 38.3%,
+        hsla(41.25, 34.78%, 9.02%, 0.236) 46.7%,
+        hsla(41.25, 34.78%, 9.02%, 0.174) 55.4%,
+        hsla(41.25, 34.78%, 9.02%, 0.118) 64.4%,
+        hsla(41.25, 34.78%, 9.02%, 0.07) 73.5%,
+        hsla(41.25, 34.78%, 9.02%, 0.033) 82.5%,
+        hsla(41.25, 34.78%, 9.02%, 0.009) 91.4%,
+        hsla(41.25, 34.78%, 9.02%, 0) 100%)
+    ;
+
+    .xlc-grid {
+        padding-top: 0;
+        position: relative;
+        z-index: 3;
+        margin-top: 1.5rem;
+        align-items: center;
+        grid-template-areas: 
+            "logo logo . . menu1 menu1 menu1 menu1 menu2 menu2 menu2 shop";
+        
+        .xlc-header-logo { grid-area: logo; }
+
+        .xlc-header-menu1, .xlc-header-menu2 {
+            display: flex;
+
+            li {
+                margin-right: 1rem;
+                font-size: var(--xlc-s-font-size);
+
+                &:last-of-type {
+                    margin: 0;
+                }
+            }
+        }
+        .xlc-header-menu1 {
+            grid-area: menu1;
+
+            li a { color: var(--xlc-white); }
+        }
+        .xlc-header-menu2 {
+            grid-area: menu2;
+
+            li a { color: var(--xlc-orange); }
+        }
+
+        .xlc-header-shop {
+            grid-area: shop;
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            span {
+                color: var(--xlc-white);
+                font-size: var(--xlc-s-font-size);
+            }
+        }
+    }
+}
+
+// Para la transición de esconder y mostrar el header
+.slideUp {
+    -webkit-transform: translateY(calc(0px - var(--xlc-header-height)));
+    transform: translate(0%, calc(0px - var(--xlc-header-height)));
+    transition: transform 0.5s ease-out;
+}
+
+.slideDown {
+    -webkit-transform: translateY(0);
+    transform: translate(0%, 0);
+    transition: transform 0.5s ease-out;
+}

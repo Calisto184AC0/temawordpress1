@@ -1,0 +1,22 @@
+// parrafos, encabezados, links y más
+
+@use '../abstract' as *;
+
+@each $f-weight, $f-style, $f-ubi in $xlc-fonts {
+    @font-face {
+        font-family: 'Aller';
+        src: url(#{'../' + $f-ubi}) format('truetype');
+        font-weight: #{$f-weight};
+        font-style: #{$f-style};
+    }
+}
+
+.xlc-title {
+    font-size: var(--xlc-l-font-size);
+    line-height: var(--xlc-headings-line-height);
+}
+
+.xlc-subtitle {
+    font-size: var(--xlc-s-font-size);
+    line-height: var(--xlc-subtitles-line-height);
+}
