@@ -100,6 +100,7 @@ ul, ol {
 
 a {
   text-decoration: none;
+  color: var(--xlc-black);
 }
 
 html:focus-within {
@@ -419,7 +420,7 @@ input, button, textarea, select {
   grid-area: newsletter;
 }
 .xlc-index-init-section::after {
-  background-image: url("/assets/img/index/index-init.png");
+  background-image: url("../img/index/index-init.png");
 }
 
 .xlc-index-nosotros-section .xlc-grid {
@@ -444,7 +445,7 @@ input, button, textarea, select {
   justify-self: stretch;
 }
 .xlc-index-nosotros-section::after {
-  background-image: url("/assets/img/index/index-background1.png");
+  background-image: url("../img/index/index-background1.png");
 }
 
 .xlc-index-colabora-section {
@@ -525,7 +526,7 @@ input, button, textarea, select {
   color: var(--xlc-white);
 }
 .xlc-nosotros-init-section::after {
-  background-image: url("/assets/img/nosotros/nosotros-init.png");
+  background-image: url("../img/nosotros/nosotros-init.png");
 }
 
 .xlc-nosotros-info-section .xlc-grid {
@@ -582,7 +583,7 @@ input, button, textarea, select {
   font-style: italic;
 }
 .xlc-nosotros-info-section::after {
-  background-image: url("/assets/img/nosotros/nosotros-background1.png");
+  background-image: url("../img/nosotros/nosotros-background1.png");
 }
 
 .xlc-nosotros-integrantes-section {
@@ -636,7 +637,7 @@ input, button, textarea, select {
   color: var(--xlc-white);
 }
 .xlc-proyectos-init-section::after {
-  background-image: url("/assets/img/proyecto/proyectos-init.png");
+  background-image: url("../img/proyecto/proyectos-init.png");
 }
 
 .xlc-proyectos-info-section .xlc-grid {
@@ -661,7 +662,7 @@ input, button, textarea, select {
   justify-self: stretch;
 }
 .xlc-proyectos-info-section::after {
-  background-image: url("/assets/img/proyecto/proyectos-background1.png");
+  background-image: url("../img/proyecto/proyectos-background1.png");
 }
 
 .xlc-proyectos-lista-section {
@@ -786,12 +787,12 @@ input, button, textarea, select {
   mix-blend-mode: multiply;
 }
 .xlc-footer .xlc-footer-dona::after {
-  background-image: linear-gradient(to bottom, rgba(162, 152, 129, 0.61) 0%, rgba(163, 153, 130, 0.604) 8.6%, rgba(166, 156, 133, 0.586) 17.5%, rgba(170, 160, 138, 0.559) 26.5%, rgba(175, 166, 144, 0.524) 35.6%, rgba(181, 172, 151, 0.483) 44.6%, rgba(188, 179, 158, 0.438) 53.3%, rgba(194, 186, 165, 0.389) 61.7%, rgba(201, 192, 172, 0.341) 69.6%, rgba(207, 199, 178, 0.292) 76.9%, rgba(213, 205, 184, 0.247) 83.4%, rgba(218, 210, 189, 0.206) 89%, rgba(222, 214, 194, 0.171) 93.6%, rgba(225, 217, 197, 0.144) 97.1%, rgba(227, 219, 199, 0.126) 99.2%, rgba(228, 220, 200, 0.12) 100%), url("/assets/img/footer/footer-dona.png");
+  background-image: linear-gradient(to bottom, rgba(162, 152, 129, 0.61) 0%, rgba(163, 153, 130, 0.604) 8.6%, rgba(166, 156, 133, 0.586) 17.5%, rgba(170, 160, 138, 0.559) 26.5%, rgba(175, 166, 144, 0.524) 35.6%, rgba(181, 172, 151, 0.483) 44.6%, rgba(188, 179, 158, 0.438) 53.3%, rgba(194, 186, 165, 0.389) 61.7%, rgba(201, 192, 172, 0.341) 69.6%, rgba(207, 199, 178, 0.292) 76.9%, rgba(213, 205, 184, 0.247) 83.4%, rgba(218, 210, 189, 0.206) 89%, rgba(222, 214, 194, 0.171) 93.6%, rgba(225, 217, 197, 0.144) 97.1%, rgba(227, 219, 199, 0.126) 99.2%, rgba(228, 220, 200, 0.12) 100%), url("../img/footer/footer-dona.png");
   background-blend-mode: multiply;
   background-color: var(--xlc-beige);
 }
 .xlc-footer .xlc-footer-colabora::after {
-  background-image: linear-gradient(to bottom, rgba(162, 152, 129, 0.61) 0%, rgba(163, 153, 130, 0.604) 8.6%, rgba(166, 156, 133, 0.586) 17.5%, rgba(170, 160, 138, 0.559) 26.5%, rgba(175, 166, 144, 0.524) 35.6%, rgba(181, 172, 151, 0.483) 44.6%, rgba(188, 179, 158, 0.438) 53.3%, rgba(194, 186, 165, 0.389) 61.7%, rgba(201, 192, 172, 0.341) 69.6%, rgba(207, 199, 178, 0.292) 76.9%, rgba(213, 205, 184, 0.247) 83.4%, rgba(218, 210, 189, 0.206) 89%, rgba(222, 214, 194, 0.171) 93.6%, rgba(225, 217, 197, 0.144) 97.1%, rgba(227, 219, 199, 0.126) 99.2%, rgba(228, 220, 200, 0.12) 100%), url("/assets/img/footer/footer-colabora.png");
+  background-image: linear-gradient(to bottom, rgba(162, 152, 129, 0.61) 0%, rgba(163, 153, 130, 0.604) 8.6%, rgba(166, 156, 133, 0.586) 17.5%, rgba(170, 160, 138, 0.559) 26.5%, rgba(175, 166, 144, 0.524) 35.6%, rgba(181, 172, 151, 0.483) 44.6%, rgba(188, 179, 158, 0.438) 53.3%, rgba(194, 186, 165, 0.389) 61.7%, rgba(201, 192, 172, 0.341) 69.6%, rgba(207, 199, 178, 0.292) 76.9%, rgba(213, 205, 184, 0.247) 83.4%, rgba(218, 210, 189, 0.206) 89%, rgba(222, 214, 194, 0.171) 93.6%, rgba(225, 217, 197, 0.144) 97.1%, rgba(227, 219, 199, 0.126) 99.2%, rgba(228, 220, 200, 0.12) 100%), url("../img/footer/footer-colabora.png");
   background-blend-mode: multiply;
   background-color: var(--xlc-beige);
 }

@@ -52,7 +52,7 @@
         div { grid-area: newsletter; }
     }
 
-    &::after { background-image: url('/assets/img/index/index-init.png'); }
+    &::after { background-image: url('../img/index/index-init.png'); }
 }
 
 .xlc-index-nosotros-section {
@@ -76,7 +76,7 @@
         }
     }
 
-    &::after { background-image: url('/assets/img/index/index-background1.png'); }
+    &::after { background-image: url('../img/index/index-background1.png'); }
 }
 
 .xlc-index-colabora-section {
@@ -156,7 +156,7 @@
         .xlc-subtitle { grid-area: subtitle; color: var(--xlc-white); }
     }  
 
-    &::after { background-image: url('/assets/img/nosotros/nosotros-init.png'); }
+    &::after { background-image: url('../img/nosotros/nosotros-init.png'); }
 }
 
 .xlc-nosotros-info-section {
@@ -216,7 +216,7 @@
         }
     }
 
-    &::after { background-image: url('/assets/img/nosotros/nosotros-background1.png'); }
+    &::after { background-image: url('../img/nosotros/nosotros-background1.png'); }
 }
 
 .xlc-nosotros-integrantes-section {
@@ -259,7 +259,7 @@
         .xlc-subtitle { grid-area: subtitle; color: var(--xlc-white); }
     }  
 
-    &::after { background-image: url('/assets/img/proyecto/proyectos-init.png'); }
+    &::after { background-image: url('../img/proyecto/proyectos-init.png'); }
 }
 
 .xlc-proyectos-info-section {
@@ -282,7 +282,7 @@
         }
     }
     
-    &::after { background-image: url('/assets/img/proyecto/proyectos-background1.png'); }
+    &::after { background-image: url('../img/proyecto/proyectos-background1.png'); }
 }
 
 .xlc-proyectos-lista-section {
