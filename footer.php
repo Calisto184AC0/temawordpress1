@@ -1,9 +1,23 @@
     <footer class="xlc-container xlc-footer">
+
+    <?php if( get_field('tipo_de_footer') == 'Dona' ): ?>
+
         <div class="xlc-grid xlc-footer-dona">
             <h2 class="xlc-title">¡Dona!</h2>
             <p class="xlc-subtitle">Con tu donación nos ayudas a seguir realizando proyectos propios para concienciar al mayor número de personas sobre los problemas medioambientales y avanzar en la conservación del entorno marino. </p>
-            <a class="xlc-orange-btn" href="">QUIERO AYUDAR</a>
+            <a class="xlc-orange-btn" href="<?php the_field('link_footer'); ?>">QUIERO AYUDAR</a>
         </div>
+
+    <?php elseif( get_field('tipo_de_footer') == 'Colabora' ) : ?>
+
+        <div class="xlc-grid xlc-footer-colabora">
+            <h2 class="xlc-title">¡Hazte voluntaria/o!</h2>
+            <p class="xlc-subtitle">La parte más importante de Xaloc sois vosotros. Si quieres participar en nuestros voluntariados, rellena el formulario y prepárate para unirte a la familia de Hermanos de Sal.</p>
+            <a class="xlc-orange-btn" href="<?php the_field('link_footer'); ?>">QUIERO AYUDAR</a>
+        </div>
+
+    <?php endif; ?>
+        
         <div class="xlc-grid  xlc-footer-info">
             <ul class="xlc-links">
                 <?php

@@ -39,23 +39,50 @@
             display: flex;
 
             li {
+                position: relative;
                 margin-right: 1rem;
                 font-size: var(--xlc-s-font-size);
 
                 &:last-of-type {
                     margin: 0;
                 }
+
+                &::after {
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    border-radius: 5px;
+                    
+                    transform: scaleX(0);
+                    transform-origin: center;
+                    transition: transform .1s ease-out;
+                }
+
+                &:hover::after {
+                    transform: scaleX(1);
+                }
+            }
+
+            // clase de wordpress cuando estás en la página
+            .current_page_item::after {
+                transform: scaleX(1) !important;
             }
         }
         .xlc-header-menu1 {
             grid-area: menu1;
 
             li a { color: var(--xlc-white); }
+            li::after { background-color: var(--xlc-white); }
         }
         .xlc-header-menu2 {
             grid-area: menu2;
 
             li a { color: var(--xlc-orange); }
+            li::after { background-color: var(--xlc-orange); }
         }
 
         .xlc-header-shop {

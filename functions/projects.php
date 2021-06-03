@@ -40,6 +40,7 @@ function xlc_create_project_post_type() {
 }
 
 add_action( 'init', 'xlc_create_project_post_type', 0 );
+add_theme_support( 'post-thumbnails' );     // Para que se pueda incluir la imagen destacada
 
 // Creando la taxonomia para las diferentes categorias: voluntariado, divulgación e investigación
 function xlc_create_project_type_taxonomy() {

@@ -104,6 +104,19 @@
     }
 }
 
+.xlc-index-presentacion-section {
+    & > * {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .xlc-video-container {
+        width: 100% !important;
+        height: 100% !important;
+        background-color: var(--xlc-black);
+    }
+}
+
 .xlc-index-proyectos-section {
     background-color: var(--xlc-beige);
 
