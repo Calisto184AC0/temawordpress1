@@ -19,7 +19,7 @@
                 <div class="xlc-grid">
                     <h2 class="xlc-title"><?php the_sub_field('titulo'); ?></h2>
 
-                    <?php $i = 0; while( have_rows('cartas') && $i < 3 ): the_row(); ?>
+                    <?php while( have_rows('cartas') ): the_row(); ?>
 
                         <div class="xlc-enum-card">
                             <span class="xlc-number"><?php echo get_row_index() ?></span>
@@ -27,7 +27,7 @@
                             <p class="xlc-description-card"><?php the_sub_field('descripcion'); ?></p>
                         </div>
 
-                    <?php $i++; endwhile; ?>
+                    <?php endwhile; ?>
 
                     <a href="<?php the_sub_field('boton'); ?>" class="xlc-orange-btn">CONÓCENOS</a>
                 </div>

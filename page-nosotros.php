@@ -50,7 +50,7 @@
             <div class="xlc-container xlc-nosotros-integrantes-section">
                 <div class="xlc-grid">
 
-                <?php $i = 0; while( have_rows('integrantes') && $i < 7 ): the_row(); ?>
+                <?php while( have_rows('integrantes')): the_row(); ?>
 
                     <div class="xlc-img-card">
                         <div class="xlc-member-img">
@@ -62,7 +62,7 @@
                         <p class="xlc-member-description"><?php the_sub_field('descripcion'); ?></p>
                     </div>
 
-                <?php $i++; endwhile; ?>
+                <?php endwhile; ?>
 
                 </div>
             </div>

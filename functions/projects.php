@@ -61,7 +61,8 @@ function xlc_create_project_type_taxonomy() {
         'labels'                => $labels,
         'show_ui'               => true,
         'show_admin_column'     => true,
-        'query_var'             => true
+        'query_var'             => true,
+        'show_in_rest'          => true
     );
 
     register_taxonomy( 'tipo_proyecto', array('proyectos'), $args );
