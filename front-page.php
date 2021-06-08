@@ -42,13 +42,13 @@
                     <a href="<?php the_sub_field('boton'); ?>" class="xlc-orange-btn">¿Qué puedo hacer yo?</a>
                     <div class="xlc-img-card">
                         <div class="xlc-img">
-                            <img src="<?php echo esc_url(get_sub_field('imagen_1')['url']); ?>" alt="<?php echo esc_url(get_sub_field('imagen_1')['alt']); ?>">
+                            <img src="<?php echo esc_url(get_sub_field('imagen_1')['url']); ?>" alt="<?php echo esc_attr(get_sub_field('imagen_1')['alt']); ?>">
                         </div>
                         <span class="xlc-caption">Si eres un/a particular</span>
                     </div>
                     <div class="xlc-img-card">
                         <div class="xlc-img">
-                            <img src="<?php echo esc_url(get_sub_field('imagen_2')['url']); ?>" alt="<?php echo esc_url(get_sub_field('imagen_2')['alt']); ?>">
+                            <img src="<?php echo esc_url(get_sub_field('imagen_2')['url']); ?>" alt="<?php echo esc_attr(get_sub_field('imagen_2')['alt']); ?>">
                         </div>
                         <span class="xlc-caption">Si eres una empresa</span>
                     </div>
@@ -154,7 +154,7 @@
                 </div>
             </div>
         
-            <?php endif; ?>
+        <?php endif; ?>
 
     <?php endwhile; ?>
 <?php endif; ?>
