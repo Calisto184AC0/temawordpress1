@@ -49,7 +49,7 @@
 
         .xlc-title { grid-area: title; color: var(--xlc-white); }
         .xlc-subtitle { grid-area: subtitle; color: var(--xlc-white); }
-        div { grid-area: newsletter; }
+        .xlc-newsletter { grid-area: newsletter; }
     }
 
     &::after { background-image: url('../img/index/index-init.png'); }
@@ -317,3 +317,136 @@
 }
 
 /* #endregion Proyectos */
+
+/* #region Cada proyecto */
+.xlc-proyecto-init-section {
+    padding-top: var(--xlc-header-height);
+    padding-bottom: var(--xlc-header-height);
+    display: flex;
+    align-items: flex-end;
+
+    .xlc-grid {
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "title title title title title ."
+            "subtitle subtitle subtitle subtitle subtitle subtitle";
+
+        .xlc-title { grid-area: title; color: var(--xlc-white); }
+        .xlc-subtitle { grid-area: subtitle; color: var(--xlc-white); }
+    }
+}
+
+.xlc-proyecto-info-section {
+    .xlc-grid {
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "title title title title title title . . . . . ."
+            "description description description description description description . . descargas descargas descargas descargas";
+        
+        padding-bottom: var(--xlc-header-height);
+        align-content: stretch;
+        height: 100%;
+        
+        .xlc-title { grid-area: title; }
+        .xlc-description {
+            grid-area: description;
+            align-self: end;
+            font-size: var(--xlc-xs-font-size);
+            line-height: var(--xlc-paragraph-line-height);
+        }
+        .xlc-descargas {
+            grid-area: descargas;
+            align-self: end;
+            max-height: 100%;
+            overflow-y: auto;
+
+            .xlc-descarga {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1rem 1rem 1rem 0;
+                border-top: 1px solid var(--xlc-gray);
+
+                .xlc-descarga-title {
+                    font-size: var(--xlc-s-font-size);
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+.xlc-proyecto-destacados-section {
+    background-color: var(--xlc-beige);
+    padding-top: 9.75rem;
+    padding-bottom: 9.75rem;
+
+    .xlc-grid {
+        padding: 2rem 0 2rem;
+        border-top: 1px solid var(--xlc-gray);
+
+        grid-template-areas: 
+            "title title title . . . description description description description description description";
+        
+        .xlc-destacado-title {
+            grid-area: title;
+            font-size: var(--xlc-m-font-size);
+            font-weight: bold;
+        }
+        .xlc-destacado-description {
+            grid-area: description;
+            font-size: var(--xlc-s-font-size);
+            line-height: var(--xlc-subtitles-line-height);
+        }
+
+        &:last-of-type {
+            padding: 2rem 0 0;
+        }
+    }
+}
+
+.xlc-proyecto-cta-section {
+    background-color: var(--xlc-black);
+    color: var(--xlc-white);
+
+    .xlc-grid {
+        padding-bottom: var(--xlc-section-top-padding);
+        grid-template-areas: 
+            "title title title . . . . . . . . ."
+            "description description description description description . . . . btn btn btn";
+        row-gap: 1rem;
+
+        .xlc-title {
+            grid-area: title;
+            font-size: var(--xlc-m-font-size);
+        }
+        .xlc-description {
+            grid-area: description;
+            font-size: var(--xlc-s-font-size);
+            line-height: var(--xlc-subtitles-line-height);
+        }
+        .xlc-orange-btn { grid-area: btn; }
+    }
+}
+
+.xlc-proyecto-more-info-section {
+    background-color: var(--xlc-beige);
+
+    .xlc-grid {
+        padding-bottom: var(--xlc-section-top-padding);
+        grid-template-areas: 
+            "title title title . . . description description description description description description";
+    
+        .xlc-title {
+            grid-area: title;
+            font-size: var(--xlc-m-font-size);
+        }
+        .xlc-description {
+            grid-area: description;
+            font-size: var(--xlc-s-font-size);
+            line-height: var(--xlc-subtitles-line-height);
+        }
+    }
+}
+
+/* #endregion Cada proyecto */
