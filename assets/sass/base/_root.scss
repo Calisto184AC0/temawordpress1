@@ -3,6 +3,7 @@
 @use '../abstract' as *;
 
 :root {
+
     // Los colores
     @each $color, $value in $xlc-colors {
         --xlc-#{"" + $color}: #{$value};
@@ -29,4 +30,19 @@
     --xlc-project-padding: #{$xlc-project-padding};
 
     --xlc-transition-projects-interval: #{$xlc-transition-projects-interval};
+}
+
+@media (max-width: 576px) {
+    :root {
+        @each $size, $value in $xlc-responsive-font-sizes {
+            --xlc-#{$size}-font-size: #{$value};
+        }
+
+        @each $name, $value in $xlc-responsive-line-heights {
+            --xlc-#{$name}-line-height: #{$value};
+        }
+
+        --xlc-grid-gap: #{$xlc-responsive-grid-gap};
+        --xlc-grid-lateral-space: #{$xlc-responsive-grid-lateral-space};
+    }
 }

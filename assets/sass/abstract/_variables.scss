@@ -1,11 +1,18 @@
 // otras variables
 
+// tamaño de ventana
+$xlc-tablet-size: 768px;
+$xlc-mobile-size: 576px;
+
 // Sections
 $xlc-section-top-padding: 4.375rem; // 70px
 
 // Grid
 $xlc-grid-lateral-space: 8.875rem; // 142px
 $xlc-grid-gap: 2rem; // 32px
+
+$xlc-responsive-grid-lateral-space: 2.375rem; // 38px
+$xlc-responsive-grid-gap: 1.25rem; //20px
 
 // Header
 $xlc-header-height: 8rem; // 212px -> 13.25rem; 100px -> 6.25rem

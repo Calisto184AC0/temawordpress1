@@ -30,6 +30,16 @@
     }
 }
 
+@media (max-width: 576px) {
+    .xlc-enum-card {
+        .xlc-number {
+            width: 2rem;
+            height: 2rem;
+            margin-bottom: 1.25rem;
+        }
+    }
+}
+
 .xlc-img-card {
 
     .xlc-img, .xlc-member-img {

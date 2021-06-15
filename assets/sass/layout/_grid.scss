@@ -14,3 +14,9 @@
         align-content: start;
     }
 }
+
+@media (max-width: 576px) {
+    .xlc-container > .xlc-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
