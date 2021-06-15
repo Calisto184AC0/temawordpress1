@@ -449,4 +449,65 @@
     }
 }
 
+.xlc-proyecto-gallery-section {
+    background-color: var(--xlc-beige);
+
+    .xlc-grid {
+        grid-template-areas: 
+            "title title title title title title . . . . . ."
+            "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery";
+        
+        .xlc-title {
+            grid-area: title;
+            font-size: var(--xlc-m-font-size);
+        }
+        .xlc-gallery-container {
+            grid-area: gallery;
+            display: flex;
+            flex-wrap: wrap;
+            flex: 0 0 32%;
+
+            .xlc-image {
+                width: 32%;
+                height: 291.15px;
+                margin-right: 2%;
+                margin-top: 2%;
+                object-fit: contain;
+
+
+                &:nth-of-type(3n) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.xlc-proyecto-video-section {
+    background-color: var(--xlc-beige);
+    padding-bottom: 10rem;
+
+    .xlc-grid {
+        grid-template-areas: 
+            "title title title title title title . . . . . ."
+            "video video video video video video video video video video video video";
+        
+        .xlc-title {
+            grid-area: title;
+            font-size: var(--xlc-m-font-size);
+        }
+
+        .wp-video {
+            grid-area: video;
+            width: 100% !important;
+            height: 100% !important;
+
+            .xlc-video-container {
+                width: 100% !important;
+                height: 100% !important;
+            }
+        }
+    }
+}
+
 /* #endregion Cada proyecto */

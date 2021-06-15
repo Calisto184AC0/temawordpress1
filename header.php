@@ -5,6 +5,28 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <?php wp_head(); ?>
+
+        <?php if (get_post_type() == 'proyectos'): // de este modo se podrán ver los fondos para los proyectos?>
+
+            <style>
+                <?php while( have_rows('contenido') ): the_row(); ?>
+                    <?php if (get_row_layout() == 'proyecto_init') : ?>
+
+                        .xlc-proyecto-init-section::after {
+                            background-image: url('<?php echo esc_url(get_the_post_thumbnail_url()); ?>');
+                        }
+
+                    <?php elseif(get_row_layout() == 'proyecto_info'): ?>
+
+                        .xlc-proyecto-info-section::after {
+                            background-image: url('<?php echo esc_url(get_sub_field('fondo')['url']); ?>');
+                        }
+
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            </style>
+
+        <?php endif; ?>
         <title>Página principal</title>
     </head>
 <body>
