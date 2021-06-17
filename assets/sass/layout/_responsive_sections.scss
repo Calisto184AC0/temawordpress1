@@ -1,6 +1,6 @@
 
 @media (max-width: 576px) {
-    /* #region Index */
+    /* #region Index (Responsive terminado) */
     .xlc-index-init-section {
         padding-bottom: var(--xlc-section-top-padding);
         display: flex;
@@ -20,6 +20,8 @@
     }
 
     .xlc-index-nosotros-section {
+        height: auto !important;
+
         .xlc-grid {
             grid-template-areas: 
                 "title title title title"
@@ -29,12 +31,10 @@
                 "btn btn btn btn";
 
             .xlc-title { 
-                grid-area: title; 
                 margin-bottom: 3.5rem;
             }
             .xlc-orange-btn {
-                grid-area: btn;
-                justify-self: stretch;
+                margin-bottom: 4.725rem;
             }
         }
 
@@ -43,30 +43,32 @@
 
     .xlc-index-colabora-section {
         background-color: var(--xlc-beige);
+        height: auto !important;
         
         .xlc-grid {
             grid-template-rows: auto auto 1fr;
             grid-template-areas: 
-                "title title title title img1 img1 img1 img1 img2 img2 img2 img2"
-                "description description description description img1 img1 img1 img1 img2 img2 img2 img2"
-                "btn btn btn . img1 img1 img1 img1 img2 img2 img2 img2";
+                "title title title title"
+                "description description description description"
+                "btn btn btn btn"
+                "img1 img1 img2 img2";
 
-            .xlc-title { 
-                grid-area: title;
-                font-size: var(--xlc-xl-font-size);
-                line-height: 133px;
+            .xlc-title {
+                line-height: 24px;
+                margin-bottom: 1rem;
             }
             .xlc-subtitle {
-                grid-area: description;
-                margin-bottom: 2.375rem;
+                margin-bottom: 2rem;
             }
-            .xlc-orange-btn { grid-area: btn; }
+            .xlc-orange-btn { margin-bottom: 2rem; }
             .xlc-img-card:nth-of-type(1) { grid-area: img1; }
             .xlc-img-card:nth-of-type(2) { grid-area: img2; }
         }
     }
 
     .xlc-index-presentacion-section {
+        height: auto !important;
+
         & > * {
             width: 100% !important;
             height: 100% !important;
@@ -83,18 +85,33 @@
         background-color: var(--xlc-beige);
 
         .xlc-grid {
-            margin-bottom: 5.5rem;
+            margin-bottom: 3.125rem;
             grid-template-rows: auto auto;
             grid-template-areas: 
                 "title title title title title title"
                 "description description description description description description";
 
-            .xlc-title { grid-area: title; }
-            .xlc-subtitle { grid-area: description; }
+            .xlc-title { margin-bottom: 1rem; }
         }
 
         .xlc-projects-list {
-            margin: 0 calc(0px - var(--xlc-grid-lateral-space));
+            margin-left: calc(0px - var(--xlc-grid-lateral-space));
+            overflow-x: auto;
+            flex-wrap: nowrap;
+
+            .xlc-project, .xlc-all-project {
+                min-width: 21rem;
+                height: 14.75rem;
+                padding: 1.25rem;
+
+                .xlc-project-title {
+                    font-size: var(--xlc-l-font-size);
+                }
+            }
+
+            .xlc-project {
+                margin-right: 1rem;
+            }
         }
     }
 
@@ -111,6 +128,16 @@
 
         .xlc-marcas-list {
             margin: 0 calc(0px - var(--xlc-grid-lateral-space));
+
+            .xlc-marca {
+                width: 50%;
+                height: 12.875rem;
+                padding: 1rem;
+
+                &:nth-child(2n) {
+                    border-right: none;
+                }
+            }
         }
     }
     /* #endregion Index */

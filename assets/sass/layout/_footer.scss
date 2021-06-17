@@ -5,7 +5,6 @@
         position: relative;
         height: 38rem;
 
-        grid-template-rows: auto auto auto;
         grid-template-areas: 
             "title title title title title title . . . . . ."
             "description description description description description description . . . . . ."
@@ -149,6 +148,56 @@
             justify-self: end;
             font-size: var(--xlc-xs-font-size);
             font-weight: lighter;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .xlc-footer {
+        .xlc-footer-dona, .xlc-footer-colabora {
+            width: 100vw;
+            height: 100vh;
+            max-width:100%;
+
+            grid-template-areas: 
+                "title title title title"
+                "description description description description"
+                "btn btn btn btn";
+
+            .xlc-title {
+                margin-bottom: 2rem;
+            }
+
+            .xlc-subtitle {
+                margin-bottom: 28rem;
+            }
+        }
+
+        .xlc-footer-info {
+            grid-template-areas:
+                "links links links links"
+                "legal legal legal legal"
+                "newsletter newsletter newsletter newsletter"
+                "ubi ubi ubi ubi"
+                "rrss rrss rrss rrss"
+                "copy copy copy copy";
+            padding-bottom: 5rem;
+            row-gap: 2rem;
+
+            .xlc-links li.xlc-footer-menu2 {
+                padding-top: 0.8rem;
+            }
+            .xlc-links li:last-child {
+                padding-top: 0;
+            }
+
+            .xlc-links, .xlc-legal-info {
+                font-size: 1.125rem;
+            }
+    
+            .xlc-footer-logo {
+                display: none;
+            }
         }
     }
 }

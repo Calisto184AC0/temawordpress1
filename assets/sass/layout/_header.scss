@@ -114,5 +114,7 @@
 }
 
 @media (max-width: 576px) {
-    .xlc-header { display: none; }
+    .xlc-header {
+        position: absolute;
+    }
 }
