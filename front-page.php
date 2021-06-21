@@ -56,7 +56,7 @@
             </div>
 
         <?php elseif(get_row_layout() == 'index_presentacion') : ?>
-
+            <!-- TODO: Que aparezca una imagen y si se quiere ver el video que se pulse en la imagen y se cargue el video -->
             <div class="xlc-section-vp xlc-index-presentacion-section">
                 <?php 
                     $video = get_sub_field('video')['url'];

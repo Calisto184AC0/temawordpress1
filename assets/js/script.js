@@ -24,6 +24,7 @@ if (header != null) {
 }
 
 // Header en movil
+// TODO: Hacer que cuando se redimensione vuelva a tener el aspecto original, es decir, cuando se hace pqueño y se vuelve a hacer grande ya no aparecen los elementos
 
 let responsive = () => {
 
