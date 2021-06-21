@@ -53,5 +53,10 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/icon/carrito.svg" alt="">
                 <span>Carrito</span>
             </a>
+
+            <img class="xlc-open-menu-btn" onclick="OpenMenu(this)" src="<?php echo get_template_directory_uri(); ?>/assets/icon/abrir-menu.svg" alt="">
+        </div>
+        <div class="xlc-menu-responsive">
+            <img class="xlc-close-menu-btn" onclick="CloseMenu(this)" src="<?php echo get_template_directory_uri(); ?>/assets/icon/cerrar-menu.svg" alt="">
         </div>
     </header>

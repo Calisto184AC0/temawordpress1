@@ -22,3 +22,42 @@ if (header != null) {
         new_scroll_position = last_scroll_position
     })
 }
+
+// Header en movil
+
+let responsive = () => {
+
+    if (window.innerWidth > 576 || header.className.includes('xlc-header-responsive')) { return }
+
+    // añadir una clase al header
+    header.classList.add('xlc-header-responsive')
+
+    // crear nuevo elemento para contener a las listas
+    let container = header.getElementsByClassName('xlc-menu-responsive')[0]
+
+    // mover todos los elementos necesarios excepto el logo y el boton
+    let gridElement = header.getElementsByClassName('xlc-grid')[0]
+    while (gridElement.childNodes.length > 4) {
+        container.appendChild(gridElement.childNodes[2])
+    }
+}
+
+window.onload = () => {
+    responsive()
+}
+
+window.onresize = () => {
+    responsive()
+}
+
+// Abrir menu
+
+let OpenMenu = (e) => {
+    e.parentNode.parentNode.getElementsByClassName('xlc-menu-responsive')[0].classList.add('xlc-open-transition')
+    document.body.style.overflow = 'hidden'
+} 
+
+let CloseMenu = (e) => {
+    e.parentNode.classList.remove('xlc-open-transition')
+    document.body.style.overflow = 'auto'
+}
