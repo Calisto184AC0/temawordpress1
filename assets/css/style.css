@@ -213,16 +213,15 @@ input, button, textarea, select {
   font-weight: bold;
 }
 .xlc-img-card .xlc-member-description {
-  width: calc(2/3 * 100%);
+  width: 66.6666666667%;
 }
 
 .xlc-projects-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 28.125rem;
 }
 .xlc-projects-list .xlc-project {
-  width: 33.33%;
-  height: 28.125rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -355,13 +354,12 @@ input, button, textarea, select {
 }
 
 .xlc-marcas-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 28.125rem;
   border-top: 1px solid var(--xlc-gray);
 }
 .xlc-marcas-list .xlc-marca {
-  width: 25%;
-  height: 28.125rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -629,30 +627,14 @@ input, button, textarea, select {
   padding-bottom: var(--xlc-section-top-padding);
 }
 .xlc-nosotros-integrantes-section .xlc-grid {
-  grid-template-rows: auto auto auto;
-  grid-template-areas: "integ1 integ1 integ1 integ1 integ2 integ2 integ2 integ2 integ3 integ3 integ3 integ3" "integ4 integ4 integ4 integ4 integ4 integ4 integ5 integ5 integ5 integ5 integ5 integ5" "integ6 integ6 integ6 integ6 integ6 integ6 integ7 integ7 integ7 integ7 integ7 integ7";
+  grid-template-columns: repeat(6, 1fr);
   row-gap: var(--xlc-section-top-padding);
 }
-.xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card:nth-of-type(1) {
-  grid-area: integ1;
+.xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card {
+  grid-column: span 3;
 }
-.xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card:nth-of-type(2) {
-  grid-area: integ2;
-}
-.xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card:nth-of-type(3) {
-  grid-area: integ3;
-}
-.xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card:nth-of-type(4) {
-  grid-area: integ4;
-}
-.xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card:nth-of-type(5) {
-  grid-area: integ5;
-}
-.xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card:nth-of-type(6) {
-  grid-area: integ6;
-}
-.xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card:nth-of-type(7) {
-  grid-area: integ7;
+.xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card:nth-child(-n+3) {
+  grid-column: span 2;
 }
 
 /* #endregion Nostros */
@@ -849,19 +831,16 @@ input, button, textarea, select {
 }
 .xlc-proyecto-gallery-section .xlc-grid .xlc-gallery-container {
   grid-area: gallery;
-  display: flex;
-  flex-wrap: wrap;
-  flex: 0 0 32%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 291.15px;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  justify-items: center;
 }
 .xlc-proyecto-gallery-section .xlc-grid .xlc-gallery-container .xlc-image {
-  width: 32%;
   height: 291.15px;
-  margin-right: 2%;
-  margin-top: 2%;
   object-fit: contain;
-}
-.xlc-proyecto-gallery-section .xlc-grid .xlc-gallery-container .xlc-image:nth-of-type(3n) {
-  margin-right: 0;
 }
 
 .xlc-proyecto-video-section {
@@ -970,12 +949,10 @@ input, button, textarea, select {
   }
   .xlc-index-proyectos-section .xlc-projects-list {
     margin-left: calc(0px - var(--xlc-grid-lateral-space));
-    overflow-x: auto;
-    flex-wrap: nowrap;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 14.75rem;
   }
   .xlc-index-proyectos-section .xlc-projects-list .xlc-project, .xlc-index-proyectos-section .xlc-projects-list .xlc-all-project {
-    min-width: 21rem;
-    height: 14.75rem;
     padding: 1.25rem;
   }
   .xlc-index-proyectos-section .xlc-projects-list .xlc-project .xlc-project-title, .xlc-index-proyectos-section .xlc-projects-list .xlc-all-project .xlc-project-title {
@@ -997,10 +974,10 @@ input, button, textarea, select {
   }
   .xlc-index-marcas-section .xlc-marcas-list {
     margin: 0 calc(0px - var(--xlc-grid-lateral-space));
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 12.875rem;
   }
   .xlc-index-marcas-section .xlc-marcas-list .xlc-marca {
-    width: 50%;
-    height: 12.875rem;
     padding: 1rem;
   }
   .xlc-index-marcas-section .xlc-marcas-list .xlc-marca:nth-child(2n) {
@@ -1091,31 +1068,8 @@ input, button, textarea, select {
     background-color: var(--xlc-beige);
     padding-bottom: var(--xlc-section-top-padding);
   }
-  .xlc-nosotros-integrantes-section .xlc-grid {
-    grid-template-rows: auto auto auto;
-    grid-template-areas: "integ1 integ1 integ1 integ1 integ2 integ2 integ2 integ2 integ3 integ3 integ3 integ3" "integ4 integ4 integ4 integ4 integ4 integ4 integ5 integ5 integ5 integ5 integ5 integ5" "integ6 integ6 integ6 integ6 integ6 integ6 integ7 integ7 integ7 integ7 integ7 integ7";
-    row-gap: var(--xlc-section-top-padding);
-  }
-  .xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card:nth-of-type(1) {
-    grid-area: integ1;
-  }
-  .xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card:nth-of-type(2) {
-    grid-area: integ2;
-  }
-  .xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card:nth-of-type(3) {
-    grid-area: integ3;
-  }
-  .xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card:nth-of-type(4) {
-    grid-area: integ4;
-  }
-  .xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card:nth-of-type(5) {
-    grid-area: integ5;
-  }
-  .xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card:nth-of-type(6) {
-    grid-area: integ6;
-  }
-  .xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card:nth-of-type(7) {
-    grid-area: integ7;
+  .xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card {
+    grid-column: span 6 !important;
   }
 
   /* #endregion Nostros */
@@ -1312,19 +1266,13 @@ input, button, textarea, select {
   }
   .xlc-proyecto-gallery-section .xlc-grid .xlc-gallery-container {
     grid-area: gallery;
-    display: flex;
-    flex-wrap: wrap;
-    flex: 0 0 32%;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
   }
   .xlc-proyecto-gallery-section .xlc-grid .xlc-gallery-container .xlc-image {
-    width: 32%;
     height: 291.15px;
-    margin-right: 2%;
-    margin-top: 2%;
     object-fit: contain;
-  }
-  .xlc-proyecto-gallery-section .xlc-grid .xlc-gallery-container .xlc-image:nth-of-type(3n) {
-    margin-right: 0;
   }
 
   .xlc-proyecto-video-section {

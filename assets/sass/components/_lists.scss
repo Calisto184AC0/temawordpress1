@@ -1,11 +1,10 @@
 // proyectos
 .xlc-projects-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 28.125rem;
     
     .xlc-project {
-        width: 33.33%;
-        height: 28.125rem;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -205,13 +204,12 @@
 
 // marcas
 .xlc-marcas-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 28.125rem;
     border-top: 1px solid var(--xlc-gray);
 
     .xlc-marca {
-        width: 25%;
-        height: 28.125rem;
         display: flex;
         justify-content: center;
         align-items: center;
