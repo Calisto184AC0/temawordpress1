@@ -2,7 +2,7 @@
 @media (max-width: 576px) {
     /* #region Index (Responsive terminado) */
     .xlc-index-init-section {
-        padding-bottom: var(--xlc-section-top-padding);
+        // padding-bottom: var(--xlc-section-top-padding);
         display: flex;
         align-items: flex-end;
 
@@ -15,8 +15,6 @@
                 padding-bottom: 1.5rem;
             }
         }
-
-        &::after { background-image: url('../img/index/index-init.png'); }
     }
 
     .xlc-index-nosotros-section {
@@ -33,12 +31,10 @@
             .xlc-title { 
                 margin-bottom: 3.5rem;
             }
-            .xlc-orange-btn {
-                margin-bottom: 4.725rem;
-            }
+            // .xlc-orange-btn {
+                
+            // }
         }
-
-        &::after { background-image: url('../img/index/index-background1.png'); }
     }
 
     .xlc-index-colabora-section {
@@ -83,13 +79,13 @@
 
     .xlc-index-proyectos-section {
         background-color: var(--xlc-beige);
+        height: auto !important;
 
         .xlc-grid {
-            margin-bottom: 3.125rem;
             grid-template-rows: auto auto;
             grid-template-areas: 
-                "title title title title title title"
-                "description description description description description description";
+                "title title title title"
+                "description description description description";
 
             .xlc-title { margin-bottom: 1rem; }
         }
@@ -107,20 +103,17 @@
                     font-size: var(--xlc-l-font-size);
                 }
             }
-
-            .xlc-project {
-                margin-right: 1rem;
-            }
         }
     }
 
     .xlc-index-marcas-section {
         background-color: var(--xlc-beige);
+        height: auto !important;
 
         .xlc-grid {
-            margin-bottom: 5.5rem;
+            margin-bottom: 0;
             grid-template-areas: 
-                "title title title title title title";
+                "title title title title";
 
             .xlc-title { grid-area: title; }
         }
@@ -143,30 +136,32 @@
 
     /* #region Nosotros */
     .xlc-nosotros-init-section {
-        padding-top: var(--xlc-header-height);
         display: flex;
-        align-items: center;
+        align-items: flex-end;
+        //padding-bottom: var(--xlc-section-top-padding);
 
         .xlc-grid {
             grid-template-rows: auto auto;
             grid-template-areas: 
-                "title title title title title ."
-                "subtitle subtitle subtitle subtitle subtitle subtitle";
+                "title title title title"
+                "subtitle subtitle subtitle subtitle";
 
             .xlc-title { grid-area: title; color: var(--xlc-white); }
             .xlc-subtitle { grid-area: subtitle; color: var(--xlc-white); }
         }  
-
-        &::after { background-image: url('../img/nosotros/nosotros-init.png'); }
     }
 
     .xlc-nosotros-info-section {
+        height: auto !important;
         .xlc-grid {
             grid-template-rows: auto auto;
             grid-template-areas: 
-                "title title title title title title . . . . . ."
-                "description description description description description . valores valores valores ods ods ods";
-            row-gap: 13rem;
+                "title title title title"
+                "description description description description"
+                "valores valores valores valores"
+                "ods ods ods ods";
+            row-gap: 4rem;
+            padding-bottom: var(--xlc-section-top-padding);
             
             .xlc-title { grid-area: title; }
             .xlc-description {
@@ -216,13 +211,11 @@
                 }
             }
         }
-
-        &::after { background-image: url('../img/nosotros/nosotros-background1.png'); }
     }
 
     .xlc-nosotros-integrantes-section {
         background-color: var(--xlc-beige);
-        padding-bottom: var(--xlc-section-top-padding);
+        height: auto !important;
 
         .xlc-grid {
 
@@ -236,34 +229,41 @@
 
     /* #region Proyectos */
     .xlc-proyectos-init-section {
-        padding-top: var(--xlc-header-height);
+        // padding-bottom: var(--xlc-section-top-padding);
         display: flex;
-        align-items: center;
+        align-items: flex-end;
 
         .xlc-grid {
             grid-template-rows: auto auto;
             grid-template-areas: 
-                "title title title title title ."
-                "subtitle subtitle subtitle subtitle subtitle subtitle";
+                "title title title title"
+                "subtitle subtitle subtitle subtitle";
 
             .xlc-title { grid-area: title; color: var(--xlc-white); }
             .xlc-subtitle { grid-area: subtitle; color: var(--xlc-white); }
-        }  
-
-        &::after { background-image: url('../img/proyecto/proyectos-init.png'); }
+        }
     }
 
     .xlc-proyectos-info-section {
+        height: auto !important;
         .xlc-grid {
-            grid-template-rows: auto auto;
+            grid-template-rows: auto auto auto auto;
             grid-template-areas: 
-                "title title title title title title . . . . . ."
-                "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
+                "title title title title"
+                "card1 card1 card1 card1"
+                "card2 card2 card2 card2"
+                "card3 card3 card3 card3";
+
+            row-gap: 4rem;
 
             .xlc-title { 
                 grid-area: title; 
-                margin-bottom: 20rem;
+                margin-bottom: 0;
             }
+            .xlc-enum-card .xlc-description-card {
+                margin: 0;
+            }
+
             .xlc-enum-card:nth-of-type(1) { grid-area: card1; }
             .xlc-enum-card:nth-of-type(2) { grid-area: card2; }
             .xlc-enum-card:nth-of-type(3) { grid-area: card3; }
@@ -272,25 +272,26 @@
                 justify-self: stretch;
             }
         }
-        
-        &::after { background-image: url('../img/proyecto/proyectos-background1.png'); }
     }
 
     .xlc-proyectos-lista-section {
         background-color: var(--xlc-beige);
-        padding-bottom: 10rem;
+        padding-bottom: 3.5rem;
+        height: auto !important;
 
         .xlc-grid {
-            margin-bottom: 5.5rem;
+            margin-bottom: 0;
             grid-template-rows: auto;
             grid-template-areas: 
-                "title title title title title title";
+                "title title title title";
 
             .xlc-title { grid-area: title; }
         }
 
         .xlc-projects-list {
             margin: 0 calc(0px - var(--xlc-grid-lateral-space));
+            grid-template-columns: repeat(1, 1fr);
+            grid-auto-rows: 14.75rem;
         }
     }
 
@@ -298,16 +299,15 @@
 
     /* #region Cada proyecto */
     .xlc-proyecto-init-section {
-        padding-top: var(--xlc-header-height);
-        padding-bottom: var(--xlc-header-height);
+        // padding-bottom: var(--xlc-section-top-padding);
         display: flex;
         align-items: flex-end;
 
         .xlc-grid {
             grid-template-rows: auto auto;
             grid-template-areas: 
-                "title title title title title ."
-                "subtitle subtitle subtitle subtitle subtitle subtitle";
+                "title title title title title"
+                "subtitle subtitle subtitle subtitle";
 
             .xlc-title { grid-area: title; color: var(--xlc-white); }
             .xlc-subtitle { grid-area: subtitle; color: var(--xlc-white); }
@@ -315,15 +315,18 @@
     }
 
     .xlc-proyecto-info-section {
+        height: auto !important;
+        min-height: 0;
         .xlc-grid {
-            grid-template-rows: auto auto;
+            grid-template-rows: auto auto auto;
             grid-template-areas: 
-                "title title title title title title . . . . . ."
-                "description description description description description description . . descargas descargas descargas descargas";
-            
-            padding-bottom: var(--xlc-header-height);
+                "title title title title"
+                "description description description description"
+                "descargas descargas descargas descargas";
             align-content: stretch;
             height: 100%;
+            padding-bottom: 0;
+            row-gap: 2rem;
             
             .xlc-title { grid-area: title; }
             .xlc-description {
@@ -337,6 +340,7 @@
                 align-self: end;
                 max-height: 100%;
                 overflow-y: auto;
+                padding: 4rem 0;
 
                 .xlc-descarga {
                     display: flex;
@@ -356,7 +360,8 @@
 
     .xlc-proyecto-destacados-section {
         background-color: var(--xlc-beige);
-        padding-top: 9.75rem;
+        height: auto !important;
+        padding-top: 2rem;
         padding-bottom: 9.75rem;
 
         .xlc-grid {
@@ -364,7 +369,8 @@
             border-top: 1px solid var(--xlc-gray);
 
             grid-template-areas: 
-                "title title title . . . description description description description description description";
+                "title title title title" 
+                "description description description description";
             
             .xlc-destacado-title {
                 grid-area: title;
@@ -386,12 +392,13 @@
     .xlc-proyecto-cta-section {
         background-color: var(--xlc-black);
         color: var(--xlc-white);
+        height: auto !important;
 
         .xlc-grid {
-            padding-bottom: var(--xlc-section-top-padding);
             grid-template-areas: 
-                "title title title . . . . . . . . ."
-                "description description description description description . . . . btn btn btn";
+                "title title title title"
+                "description description description description" 
+                "btn btn btn btn";
             row-gap: 1rem;
 
             .xlc-title {
@@ -409,11 +416,12 @@
 
     .xlc-proyecto-more-info-section {
         background-color: var(--xlc-beige);
+        height: auto !important;
 
         .xlc-grid {
-            padding-bottom: var(--xlc-section-top-padding);
             grid-template-areas: 
-                "title title title . . . description description description description description description";
+                "title title title title"
+                "description description description description";
         
             .xlc-title {
                 grid-area: title;
@@ -429,11 +437,12 @@
 
     .xlc-proyecto-gallery-section {
         background-color: var(--xlc-beige);
+        height: auto !important;
 
         .xlc-grid {
             grid-template-areas: 
-                "title title title title title title . . . . . ."
-                "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery";
+                "title title title title"
+                "gallery gallery gallery gallery";
             
             .xlc-title {
                 grid-area: title;
@@ -456,16 +465,18 @@
 
     .xlc-proyecto-video-section {
         background-color: var(--xlc-beige);
-        padding-bottom: 10rem;
+        padding: 0;
+        height: auto !important;
 
         .xlc-grid {
             grid-template-areas: 
-                "title title title title title title . . . . . ."
-                "video video video video video video video video video video video video";
+                "title title title title"
+                "video video video video";
             
             .xlc-title {
                 grid-area: title;
                 font-size: var(--xlc-m-font-size);
+                padding: var(--xlc-grid-lateral-space);
             }
 
             .wp-video {

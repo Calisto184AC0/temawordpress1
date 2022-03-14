@@ -120,12 +120,17 @@
     transition: transform 0.5s ease-out;
 }
 
-@media (max-width: 576px) {
-    .xlc-header-responsive {
+// 576px
+@media (max-width: 1452px) {
+    .xlc-header {
 
         .xlc-grid {
             display: flex;
             justify-content: space-between;
+
+            .xlc-header-menu1, .xlc-header-menu2, .xlc-header-shop {
+                display: none;
+            }
 
             .xlc-header-logo {
                 width: 10rem;

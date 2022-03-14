@@ -19,7 +19,7 @@
 
             font-size: 1.875rem;
             color: var(--xlc-white);
-            line-height: var(--xlc-paragraph-line-height);
+            line-height: var(--xlc-subtitles-line-height);
 
             transition: all .2s ease-in;
         }
@@ -94,6 +94,7 @@
                 z-index: 2;
                 opacity: .32;
                 height: 100%;
+                width: 100%;
 
                 mix-blend-mode: luminosity;
 
@@ -122,8 +123,6 @@
     }
 
     .xlc-all-project {
-        width: 33.33%;
-        height: 28.125rem;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -138,7 +137,7 @@
 
             font-size: 1.875rem;
             color: var(--xlc-orange);
-            line-height: var(--xlc-paragraph-line-height);
+            line-height: var(--xlc-subtitles-line-height);
 
             transition: all .2s ease-in;
         }
@@ -193,10 +192,12 @@
             }
 
             img {
+                object-fit: cover;
                 position: relative;
                 z-index: 2;
                 opacity: 1;
                 height: 100%;
+                width: 100%;
             }
         }
     }

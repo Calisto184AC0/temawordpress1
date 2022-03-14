@@ -58,5 +58,9 @@
         </div>
         <div class="xlc-menu-responsive">
             <img class="xlc-close-menu-btn" onclick="CloseMenu(this)" src="<?php echo get_template_directory_uri(); ?>/assets/icon/cerrar-menu.svg" alt="">
+            <?php
+                wp_nav_menu($args_menu1);
+                wp_nav_menu($args_menu2);
+            ?>
         </div>
     </header>

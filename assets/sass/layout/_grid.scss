@@ -6,7 +6,7 @@
     & > .xlc-grid {
         position: relative;
         z-index: 1;
-        padding-top: var(--xlc-section-top-padding);
+        padding: var(--xlc-section-top-padding) 0;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         column-gap: var(--xlc-grid-gap);
@@ -15,7 +15,7 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1452px) {
     .xlc-container > .xlc-grid {
         grid-template-columns: repeat(4, 1fr);
     }

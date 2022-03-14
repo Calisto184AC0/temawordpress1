@@ -21,7 +21,7 @@
   --xlc-transition-projects-interval: 0.2s ease-in;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1452px) {
   :root {
     --xlc-xs-font-size: 0.875rem;
     --xlc-s-font-size: 0.875rem;
@@ -29,7 +29,7 @@
     --xlc-l-font-size: 1.875rem;
     --xlc-xl-font-size: 1.875rem;
     --xlc-headings-line-height: 40px;
-    --xlc-subtitles-line-height: 19px;
+    --xlc-subtitles-line-height: 24px;
     --xlc-paragraph-line-height: 19px;
     --xlc-card-description-line-height: 19px;
     --xlc-grid-gap: 1.25rem;
@@ -170,7 +170,7 @@ input, button, textarea, select {
   line-height: var(--xlc-paragraph-line-height);
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1452px) {
   .xlc-enum-card .xlc-number {
     width: 2rem;
     height: 2rem;
@@ -235,7 +235,7 @@ input, button, textarea, select {
   padding-bottom: 0.3rem;
   font-size: 1.875rem;
   color: var(--xlc-white);
-  line-height: var(--xlc-paragraph-line-height);
+  line-height: var(--xlc-subtitles-line-height);
   transition: all 0.2s ease-in;
 }
 .xlc-projects-list .xlc-project .xlc-project-description {
@@ -284,6 +284,7 @@ input, button, textarea, select {
   z-index: 2;
   opacity: 0.32;
   height: 100%;
+  width: 100%;
   mix-blend-mode: luminosity;
   transition: all, var(--xlc-transition-projects-interval);
 }
@@ -300,8 +301,6 @@ input, button, textarea, select {
   opacity: 1;
 }
 .xlc-projects-list .xlc-all-project {
-  width: 33.33%;
-  height: 28.125rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -315,7 +314,7 @@ input, button, textarea, select {
   margin-bottom: 0.5rem;
   font-size: 1.875rem;
   color: var(--xlc-orange);
-  line-height: var(--xlc-paragraph-line-height);
+  line-height: var(--xlc-subtitles-line-height);
   transition: all 0.2s ease-in;
 }
 .xlc-projects-list .xlc-all-project .xlc-project-description {
@@ -347,10 +346,12 @@ input, button, textarea, select {
   mix-blend-mode: multiply;
 }
 .xlc-projects-list .xlc-all-project .xlc-project-img img {
+  object-fit: cover;
   position: relative;
   z-index: 2;
   opacity: 1;
   height: 100%;
+  width: 100%;
 }
 
 .xlc-marcas-list {
@@ -376,7 +377,7 @@ input, button, textarea, select {
 .xlc-container > .xlc-grid {
   position: relative;
   z-index: 1;
-  padding-top: var(--xlc-section-top-padding);
+  padding: var(--xlc-section-top-padding) 0;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: var(--xlc-grid-gap);
@@ -384,15 +385,14 @@ input, button, textarea, select {
   align-content: start;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1452px) {
   .xlc-container > .xlc-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 .xlc-section-vp {
-  width: 100vw;
-  height: 100vh;
-  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .xlc-multiply-background, .xlc-color-background {
@@ -500,11 +500,17 @@ input, button, textarea, select {
   grid-area: img2;
 }
 
+.xlc-index-presentacion-section {
+  max-height: 100vh;
+  height: 100%;
+  min-height: 0;
+}
 .xlc-index-presentacion-section > * {
   width: 100% !important;
   height: 100% !important;
 }
 .xlc-index-presentacion-section .xlc-video-container {
+  display: block;
   width: 100% !important;
   height: 100% !important;
   background-color: var(--xlc-black);
@@ -855,11 +861,13 @@ input, button, textarea, select {
   font-size: var(--xlc-m-font-size);
 }
 .xlc-proyecto-video-section .xlc-grid .wp-video {
+  display: block;
   grid-area: video;
   width: 100% !important;
   height: 100% !important;
 }
 .xlc-proyecto-video-section .xlc-grid .wp-video .xlc-video-container {
+  display: block;
   width: 100% !important;
   height: 100% !important;
 }
@@ -868,7 +876,6 @@ input, button, textarea, select {
 @media (max-width: 576px) {
   /* #region Index (Responsive terminado) */
   .xlc-index-init-section {
-    padding-bottom: var(--xlc-section-top-padding);
     display: flex;
     align-items: flex-end;
   }
@@ -877,9 +884,6 @@ input, button, textarea, select {
   }
   .xlc-index-init-section .xlc-grid .xlc-title {
     padding-bottom: 1.5rem;
-  }
-  .xlc-index-init-section::after {
-    background-image: url("../img/index/index-init.png");
   }
 
   .xlc-index-nosotros-section {
@@ -890,12 +894,6 @@ input, button, textarea, select {
   }
   .xlc-index-nosotros-section .xlc-grid .xlc-title {
     margin-bottom: 3.5rem;
-  }
-  .xlc-index-nosotros-section .xlc-grid .xlc-orange-btn {
-    margin-bottom: 4.725rem;
-  }
-  .xlc-index-nosotros-section::after {
-    background-image: url("../img/index/index-background1.png");
   }
 
   .xlc-index-colabora-section {
@@ -938,11 +936,11 @@ input, button, textarea, select {
 
   .xlc-index-proyectos-section {
     background-color: var(--xlc-beige);
+    height: auto !important;
   }
   .xlc-index-proyectos-section .xlc-grid {
-    margin-bottom: 3.125rem;
     grid-template-rows: auto auto;
-    grid-template-areas: "title title title title title title" "description description description description description description";
+    grid-template-areas: "title title title title" "description description description description";
   }
   .xlc-index-proyectos-section .xlc-grid .xlc-title {
     margin-bottom: 1rem;
@@ -958,16 +956,14 @@ input, button, textarea, select {
   .xlc-index-proyectos-section .xlc-projects-list .xlc-project .xlc-project-title, .xlc-index-proyectos-section .xlc-projects-list .xlc-all-project .xlc-project-title {
     font-size: var(--xlc-l-font-size);
   }
-  .xlc-index-proyectos-section .xlc-projects-list .xlc-project {
-    margin-right: 1rem;
-  }
 
   .xlc-index-marcas-section {
     background-color: var(--xlc-beige);
+    height: auto !important;
   }
   .xlc-index-marcas-section .xlc-grid {
-    margin-bottom: 5.5rem;
-    grid-template-areas: "title title title title title title";
+    margin-bottom: 0;
+    grid-template-areas: "title title title title";
   }
   .xlc-index-marcas-section .xlc-grid .xlc-title {
     grid-area: title;
@@ -987,13 +983,12 @@ input, button, textarea, select {
   /* #endregion Index */
   /* #region Nosotros */
   .xlc-nosotros-init-section {
-    padding-top: var(--xlc-header-height);
     display: flex;
-    align-items: center;
+    align-items: flex-end;
   }
   .xlc-nosotros-init-section .xlc-grid {
     grid-template-rows: auto auto;
-    grid-template-areas: "title title title title title ." "subtitle subtitle subtitle subtitle subtitle subtitle";
+    grid-template-areas: "title title title title" "subtitle subtitle subtitle subtitle";
   }
   .xlc-nosotros-init-section .xlc-grid .xlc-title {
     grid-area: title;
@@ -1003,14 +998,15 @@ input, button, textarea, select {
     grid-area: subtitle;
     color: var(--xlc-white);
   }
-  .xlc-nosotros-init-section::after {
-    background-image: url("../img/nosotros/nosotros-init.png");
-  }
 
+  .xlc-nosotros-info-section {
+    height: auto !important;
+  }
   .xlc-nosotros-info-section .xlc-grid {
     grid-template-rows: auto auto;
-    grid-template-areas: "title title title title title title . . . . . ." "description description description description description . valores valores valores ods ods ods";
-    row-gap: 13rem;
+    grid-template-areas: "title title title title" "description description description description" "valores valores valores valores" "ods ods ods ods";
+    row-gap: 4rem;
+    padding-bottom: var(--xlc-section-top-padding);
   }
   .xlc-nosotros-info-section .xlc-grid .xlc-title {
     grid-area: title;
@@ -1060,13 +1056,10 @@ input, button, textarea, select {
     font-weight: lighter;
     font-style: italic;
   }
-  .xlc-nosotros-info-section::after {
-    background-image: url("../img/nosotros/nosotros-background1.png");
-  }
 
   .xlc-nosotros-integrantes-section {
     background-color: var(--xlc-beige);
-    padding-bottom: var(--xlc-section-top-padding);
+    height: auto !important;
   }
   .xlc-nosotros-integrantes-section .xlc-grid .xlc-img-card {
     grid-column: span 6 !important;
@@ -1075,13 +1068,12 @@ input, button, textarea, select {
   /* #endregion Nostros */
   /* #region Proyectos */
   .xlc-proyectos-init-section {
-    padding-top: var(--xlc-header-height);
     display: flex;
-    align-items: center;
+    align-items: flex-end;
   }
   .xlc-proyectos-init-section .xlc-grid {
     grid-template-rows: auto auto;
-    grid-template-areas: "title title title title title ." "subtitle subtitle subtitle subtitle subtitle subtitle";
+    grid-template-areas: "title title title title" "subtitle subtitle subtitle subtitle";
   }
   .xlc-proyectos-init-section .xlc-grid .xlc-title {
     grid-area: title;
@@ -1091,17 +1083,21 @@ input, button, textarea, select {
     grid-area: subtitle;
     color: var(--xlc-white);
   }
-  .xlc-proyectos-init-section::after {
-    background-image: url("../img/proyecto/proyectos-init.png");
-  }
 
+  .xlc-proyectos-info-section {
+    height: auto !important;
+  }
   .xlc-proyectos-info-section .xlc-grid {
-    grid-template-rows: auto auto;
-    grid-template-areas: "title title title title title title . . . . . ." "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "title title title title" "card1 card1 card1 card1" "card2 card2 card2 card2" "card3 card3 card3 card3";
+    row-gap: 4rem;
   }
   .xlc-proyectos-info-section .xlc-grid .xlc-title {
     grid-area: title;
-    margin-bottom: 20rem;
+    margin-bottom: 0;
+  }
+  .xlc-proyectos-info-section .xlc-grid .xlc-enum-card .xlc-description-card {
+    margin: 0;
   }
   .xlc-proyectos-info-section .xlc-grid .xlc-enum-card:nth-of-type(1) {
     grid-area: card1;
@@ -1116,37 +1112,35 @@ input, button, textarea, select {
     grid-area: btn;
     justify-self: stretch;
   }
-  .xlc-proyectos-info-section::after {
-    background-image: url("../img/proyecto/proyectos-background1.png");
-  }
 
   .xlc-proyectos-lista-section {
     background-color: var(--xlc-beige);
-    padding-bottom: 10rem;
+    padding-bottom: 3.5rem;
+    height: auto !important;
   }
   .xlc-proyectos-lista-section .xlc-grid {
-    margin-bottom: 5.5rem;
+    margin-bottom: 0;
     grid-template-rows: auto;
-    grid-template-areas: "title title title title title title";
+    grid-template-areas: "title title title title";
   }
   .xlc-proyectos-lista-section .xlc-grid .xlc-title {
     grid-area: title;
   }
   .xlc-proyectos-lista-section .xlc-projects-list {
     margin: 0 calc(0px - var(--xlc-grid-lateral-space));
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 14.75rem;
   }
 
   /* #endregion Proyectos */
   /* #region Cada proyecto */
   .xlc-proyecto-init-section {
-    padding-top: var(--xlc-header-height);
-    padding-bottom: var(--xlc-header-height);
     display: flex;
     align-items: flex-end;
   }
   .xlc-proyecto-init-section .xlc-grid {
     grid-template-rows: auto auto;
-    grid-template-areas: "title title title title title ." "subtitle subtitle subtitle subtitle subtitle subtitle";
+    grid-template-areas: "title title title title title" "subtitle subtitle subtitle subtitle";
   }
   .xlc-proyecto-init-section .xlc-grid .xlc-title {
     grid-area: title;
@@ -1157,12 +1151,17 @@ input, button, textarea, select {
     color: var(--xlc-white);
   }
 
+  .xlc-proyecto-info-section {
+    height: auto !important;
+    min-height: 0;
+  }
   .xlc-proyecto-info-section .xlc-grid {
-    grid-template-rows: auto auto;
-    grid-template-areas: "title title title title title title . . . . . ." "description description description description description description . . descargas descargas descargas descargas";
-    padding-bottom: var(--xlc-header-height);
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "title title title title" "description description description description" "descargas descargas descargas descargas";
     align-content: stretch;
     height: 100%;
+    padding-bottom: 0;
+    row-gap: 2rem;
   }
   .xlc-proyecto-info-section .xlc-grid .xlc-title {
     grid-area: title;
@@ -1178,6 +1177,7 @@ input, button, textarea, select {
     align-self: end;
     max-height: 100%;
     overflow-y: auto;
+    padding: 4rem 0;
   }
   .xlc-proyecto-info-section .xlc-grid .xlc-descargas .xlc-descarga {
     display: flex;
@@ -1193,13 +1193,14 @@ input, button, textarea, select {
 
   .xlc-proyecto-destacados-section {
     background-color: var(--xlc-beige);
-    padding-top: 9.75rem;
+    height: auto !important;
+    padding-top: 2rem;
     padding-bottom: 9.75rem;
   }
   .xlc-proyecto-destacados-section .xlc-grid {
     padding: 2rem 0 2rem;
     border-top: 1px solid var(--xlc-gray);
-    grid-template-areas: "title title title . . . description description description description description description";
+    grid-template-areas: "title title title title" "description description description description";
   }
   .xlc-proyecto-destacados-section .xlc-grid .xlc-destacado-title {
     grid-area: title;
@@ -1218,10 +1219,10 @@ input, button, textarea, select {
   .xlc-proyecto-cta-section {
     background-color: var(--xlc-black);
     color: var(--xlc-white);
+    height: auto !important;
   }
   .xlc-proyecto-cta-section .xlc-grid {
-    padding-bottom: var(--xlc-section-top-padding);
-    grid-template-areas: "title title title . . . . . . . . ." "description description description description description . . . . btn btn btn";
+    grid-template-areas: "title title title title" "description description description description" "btn btn btn btn";
     row-gap: 1rem;
   }
   .xlc-proyecto-cta-section .xlc-grid .xlc-title {
@@ -1239,10 +1240,10 @@ input, button, textarea, select {
 
   .xlc-proyecto-more-info-section {
     background-color: var(--xlc-beige);
+    height: auto !important;
   }
   .xlc-proyecto-more-info-section .xlc-grid {
-    padding-bottom: var(--xlc-section-top-padding);
-    grid-template-areas: "title title title . . . description description description description description description";
+    grid-template-areas: "title title title title" "description description description description";
   }
   .xlc-proyecto-more-info-section .xlc-grid .xlc-title {
     grid-area: title;
@@ -1256,9 +1257,10 @@ input, button, textarea, select {
 
   .xlc-proyecto-gallery-section {
     background-color: var(--xlc-beige);
+    height: auto !important;
   }
   .xlc-proyecto-gallery-section .xlc-grid {
-    grid-template-areas: "title title title title title title . . . . . ." "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery";
+    grid-template-areas: "title title title title" "gallery gallery gallery gallery";
   }
   .xlc-proyecto-gallery-section .xlc-grid .xlc-title {
     grid-area: title;
@@ -1277,14 +1279,16 @@ input, button, textarea, select {
 
   .xlc-proyecto-video-section {
     background-color: var(--xlc-beige);
-    padding-bottom: 10rem;
+    padding: 0;
+    height: auto !important;
   }
   .xlc-proyecto-video-section .xlc-grid {
-    grid-template-areas: "title title title title title title . . . . . ." "video video video video video video video video video video video video";
+    grid-template-areas: "title title title title" "video video video video";
   }
   .xlc-proyecto-video-section .xlc-grid .xlc-title {
     grid-area: title;
     font-size: var(--xlc-m-font-size);
+    padding: var(--xlc-grid-lateral-space);
   }
   .xlc-proyecto-video-section .xlc-grid .wp-video {
     grid-area: video;
@@ -1394,18 +1398,21 @@ input, button, textarea, select {
   transition: transform 0.5s ease-out;
 }
 
-@media (max-width: 576px) {
-  .xlc-header-responsive .xlc-grid {
+@media (max-width: 1452px) {
+  .xlc-header .xlc-grid {
     display: flex;
     justify-content: space-between;
   }
-  .xlc-header-responsive .xlc-grid .xlc-header-logo {
+  .xlc-header .xlc-grid .xlc-header-menu1, .xlc-header .xlc-grid .xlc-header-menu2, .xlc-header .xlc-grid .xlc-header-shop {
+    display: none;
+  }
+  .xlc-header .xlc-grid .xlc-header-logo {
     width: 10rem;
   }
-  .xlc-header-responsive .xlc-grid .xlc-open-menu-btn {
+  .xlc-header .xlc-grid .xlc-open-menu-btn {
     display: block;
   }
-  .xlc-header-responsive .xlc-menu-responsive {
+  .xlc-header .xlc-menu-responsive {
     display: block;
     position: fixed;
     z-index: 5;
@@ -1419,24 +1426,24 @@ input, button, textarea, select {
     transition: transform 0.5s ease-out;
     padding: 9rem 5.5rem;
   }
-  .xlc-header-responsive .xlc-menu-responsive .xlc-close-menu-btn {
+  .xlc-header .xlc-menu-responsive .xlc-close-menu-btn {
     position: absolute;
     right: 2.5rem;
     top: 2.5rem;
   }
-  .xlc-header-responsive .xlc-menu-responsive .xlc-header-menu1, .xlc-header-responsive .xlc-menu-responsive .xlc-header-menu2 {
+  .xlc-header .xlc-menu-responsive .xlc-header-menu1, .xlc-header .xlc-menu-responsive .xlc-header-menu2 {
     display: flex;
     flex-direction: column;
     align-items: start;
   }
-  .xlc-header-responsive .xlc-menu-responsive .xlc-header-menu1 li, .xlc-header-responsive .xlc-menu-responsive .xlc-header-menu2 li {
+  .xlc-header .xlc-menu-responsive .xlc-header-menu1 li, .xlc-header .xlc-menu-responsive .xlc-header-menu2 li {
     margin-bottom: 0.5rem;
     position: relative;
   }
-  .xlc-header-responsive .xlc-menu-responsive .xlc-header-menu1 li a, .xlc-header-responsive .xlc-menu-responsive .xlc-header-menu2 li a {
+  .xlc-header .xlc-menu-responsive .xlc-header-menu1 li a, .xlc-header .xlc-menu-responsive .xlc-header-menu2 li a {
     font-size: 1.5rem;
   }
-  .xlc-header-responsive .xlc-menu-responsive .xlc-header-menu1 li::after, .xlc-header-responsive .xlc-menu-responsive .xlc-header-menu2 li::after {
+  .xlc-header .xlc-menu-responsive .xlc-header-menu1 li::after, .xlc-header .xlc-menu-responsive .xlc-header-menu2 li::after {
     position: absolute;
     left: 0;
     top: 100%;
@@ -1449,34 +1456,34 @@ input, button, textarea, select {
     transform-origin: center;
     transition: transform 0.1s ease-out;
   }
-  .xlc-header-responsive .xlc-menu-responsive .xlc-header-menu1 .current_page_item::after, .xlc-header-responsive .xlc-menu-responsive .xlc-header-menu2 .current_page_item::after {
+  .xlc-header .xlc-menu-responsive .xlc-header-menu1 .current_page_item::after, .xlc-header .xlc-menu-responsive .xlc-header-menu2 .current_page_item::after {
     transform: scaleX(1) !important;
   }
-  .xlc-header-responsive .xlc-menu-responsive .xlc-header-menu1 li a {
+  .xlc-header .xlc-menu-responsive .xlc-header-menu1 li a {
     color: var(--xlc-white);
   }
-  .xlc-header-responsive .xlc-menu-responsive .xlc-header-menu1 li::after {
+  .xlc-header .xlc-menu-responsive .xlc-header-menu1 li::after {
     background-color: var(--xlc-white);
   }
-  .xlc-header-responsive .xlc-menu-responsive .xlc-header-menu2 li a {
+  .xlc-header .xlc-menu-responsive .xlc-header-menu2 li a {
     color: var(--xlc-orange);
   }
-  .xlc-header-responsive .xlc-menu-responsive .xlc-header-menu2 li::after {
+  .xlc-header .xlc-menu-responsive .xlc-header-menu2 li::after {
     background-color: var(--xlc-orange);
   }
-  .xlc-header-responsive .xlc-menu-responsive .xlc-header-shop {
+  .xlc-header .xlc-menu-responsive .xlc-header-shop {
     display: flex;
     align-items: center;
     position: absolute;
     bottom: 5rem;
     left: 3rem;
   }
-  .xlc-header-responsive .xlc-menu-responsive .xlc-header-shop span {
+  .xlc-header .xlc-menu-responsive .xlc-header-shop span {
     margin-left: 2rem;
     color: var(--xlc-white);
     font-size: 1.5rem;
   }
-  .xlc-header-responsive .xlc-open-transition {
+  .xlc-header .xlc-open-transition {
     transform: translateX(0%) !important;
   }
 }
@@ -1584,7 +1591,7 @@ input, button, textarea, select {
   font-weight: lighter;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1452px) {
   .xlc-footer .xlc-footer-dona, .xlc-footer .xlc-footer-colabora {
     width: 100vw;
     height: 100vh;
