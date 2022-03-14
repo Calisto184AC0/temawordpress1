@@ -1,5 +1,5 @@
 
-@media (max-width: 576px) {
+@media (max-width: 1452px) {
     /* #region Index (Responsive terminado) */
     .xlc-index-init-section {
         // padding-bottom: var(--xlc-section-top-padding);
@@ -86,6 +86,7 @@
             grid-template-areas: 
                 "title title title title"
                 "description description description description";
+            margin-bottom: 0;
 
             .xlc-title { margin-bottom: 1rem; }
         }
@@ -302,6 +303,7 @@
         // padding-bottom: var(--xlc-section-top-padding);
         display: flex;
         align-items: flex-end;
+        padding-bottom: 0;
 
         .xlc-grid {
             grid-template-rows: auto auto;

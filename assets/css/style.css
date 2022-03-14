@@ -873,7 +873,7 @@ input, button, textarea, select {
 }
 
 /* #endregion Cada proyecto */
-@media (max-width: 576px) {
+@media (max-width: 1452px) {
   /* #region Index (Responsive terminado) */
   .xlc-index-init-section {
     display: flex;
@@ -941,6 +941,7 @@ input, button, textarea, select {
   .xlc-index-proyectos-section .xlc-grid {
     grid-template-rows: auto auto;
     grid-template-areas: "title title title title" "description description description description";
+    margin-bottom: 0;
   }
   .xlc-index-proyectos-section .xlc-grid .xlc-title {
     margin-bottom: 1rem;
@@ -1137,6 +1138,7 @@ input, button, textarea, select {
   .xlc-proyecto-init-section {
     display: flex;
     align-items: flex-end;
+    padding-bottom: 0;
   }
   .xlc-proyecto-init-section .xlc-grid {
     grid-template-rows: auto auto;
