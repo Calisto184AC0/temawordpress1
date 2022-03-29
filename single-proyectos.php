@@ -15,7 +15,7 @@
 
         <?php elseif(get_row_layout() == 'proyecto_info'): ?>
 
-            <div class="xlc-container xlc-section-vp xlc-proyecto-info-section xlc-color-background">
+            <div class="xlc-container xlc-proyecto-info-section xlc-color-background">
                 <div class="xlc-grid">
                     <h2 class="xlc-title"><?php the_sub_field('titulo'); ?></h2>
                     <p class="xlc-description"><?php the_sub_field('descripcion'); ?></p>
@@ -96,6 +96,17 @@
 
                         echo wp_video_shortcode($attr);
                     ?>
+                </div>
+            </div>
+
+        <?php elseif(get_row_layout() == 'proyecto_video_youtube') : ?>
+        
+            <div class="xlc-container xlc-proyecto-video-youtube-section">
+                <div class="xlc-grid">
+                    <h2 class="xlc-title"><?php the_sub_field('titulo'); ?></h2>
+                    <div class="xlc-video-container">
+                        <?php the_sub_field('video'); ?>
+                    </div>
                 </div>
             </div>
 

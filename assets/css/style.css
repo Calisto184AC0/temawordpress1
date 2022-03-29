@@ -395,10 +395,12 @@ input, button, textarea, select {
   min-height: 100vh;
 }
 
-.xlc-multiply-background, .xlc-color-background {
+.xlc-multiply-background,
+.xlc-color-background {
   position: relative;
 }
-.xlc-multiply-background::after, .xlc-color-background::after {
+.xlc-multiply-background::after,
+.xlc-color-background::after {
   content: "";
   position: absolute;
   z-index: 0;
@@ -734,6 +736,7 @@ input, button, textarea, select {
   padding-bottom: var(--xlc-header-height);
   align-content: stretch;
   height: 100%;
+  row-gap: 1rem;
 }
 .xlc-proyecto-info-section .xlc-grid .xlc-title {
   grid-area: title;
@@ -870,6 +873,34 @@ input, button, textarea, select {
   display: block;
   width: 100% !important;
   height: 100% !important;
+}
+
+.xlc-proyecto-video-youtube-section {
+  background-color: var(--xlc-beige);
+  padding-bottom: 10rem;
+}
+.xlc-proyecto-video-youtube-section .xlc-grid {
+  grid-template-areas: "title title title title title title . . . . . ." "video video video video video video video video video video video video";
+}
+.xlc-proyecto-video-youtube-section .xlc-grid .xlc-title {
+  grid-area: title;
+  font-size: var(--xlc-m-font-size);
+}
+.xlc-proyecto-video-youtube-section .xlc-grid .xlc-video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+.xlc-proyecto-video-youtube-section .xlc-grid .xlc-video-container iframe,
+.xlc-proyecto-video-youtube-section .xlc-grid .xlc-video-container object,
+.xlc-proyecto-video-youtube-section .xlc-grid .xlc-video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* #endregion Cada proyecto */
