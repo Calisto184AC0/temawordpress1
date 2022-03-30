@@ -7,8 +7,8 @@
 
             <div class="xlc-container xlc-section-vp xlc-proyecto-init-section xlc-multiply-background">
                 <div class="xlc-grid">
-                    <h1 class="xlc-title">Campamento Tortuga</h1>
-                    <p class="xlc-subtitle">En los últimos 20 años las tortugas bobas (Caretta caretta) están eligiendo las costas del mediterráneo español como zona de nidificación.</p>
+                    <h1 class="xlc-title"><?php the_sub_field('titulo'); ?></h1>
+                    <p class="xlc-subtitle"><?php the_sub_field('descripcion'); ?></p>
                     <div></div>
                 </div>
             </div>

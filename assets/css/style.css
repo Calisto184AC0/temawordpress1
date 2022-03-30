@@ -887,6 +887,7 @@ input, button, textarea, select {
   font-size: var(--xlc-m-font-size);
 }
 .xlc-proyecto-video-youtube-section .xlc-grid .xlc-video-container {
+  grid-area: video;
   position: relative;
   padding-bottom: 56.25%;
   overflow: hidden;
